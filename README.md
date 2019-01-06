@@ -32,8 +32,8 @@ The activities in the Alpaca UiPath form builder library are also aimed at allow
 2.  [Multiple Forms](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/02_AlpacaUiPath_FormBuilding_Method1_MultipleForms.mp4?raw=true)
 3.  [Different Layouts, Build Forms in a Loop](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/03_AlpacaUiPath_FormBuilding_Method1_LayoutsAndGeneration.mp4?raw=true)
 
-###Form Building Method 2
+### Form Building Method 2
 [Basics]
 
-###Available Controls
+### Available Controls
 [Control Showcase](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/04_AlpacaUiPath_FormBuilding_ControlTypes.mp4?raw=true)
