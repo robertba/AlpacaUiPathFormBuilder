@@ -25,3 +25,15 @@ The activities in the Alpaca UiPath form builder library are also aimed at allow
 1. Download the NuGet package for the Alpaca UiPath form builder library:  alpacauipathformbuilderlib.{version}.nupkg (This NuGet package was itself created from a library project "alpacauipathformbuilderlib")
 2. Place this file in the subdirectory under where you installed UiPath Studio in the "Packages" subdirectory
 3. You can then use the template project to create a project template in Studio or simply open this project to access form building templates and examples
+
+## Video
+### Form Building Method 1
+1.  [The Basics](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/01_AlpacaUiPath_FormBuilding_Method1_Basics.mp4?raw=true)
+2.  [Multiple Forms](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/02_AlpacaUiPath_FormBuilding_Method1_MultipleForms.mp4?raw=true)
+3.  [Different Layouts, Build Forms in a Loop](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/03_AlpacaUiPath_FormBuilding_Method1_LayoutsAndGeneration.mp4?raw=true)
+
+###Form Building Method 2
+[Basics]
+
+###Available Controls
+[Control Showcase](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/04_AlpacaUiPath_FormBuilding_ControlTypes.mp4?raw=true)
