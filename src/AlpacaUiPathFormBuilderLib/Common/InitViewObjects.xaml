@@ -1,0 +1,187 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="SetupSchemaObjects" this:SetupSchemaObjects.LayoutTemplate="&lt;div class='row'&gt;&lt;div class='col-md-6' id='column-1'&gt;&lt;/div&gt;&lt;div class='col-md-6' id='column-2'&gt;&lt;/div&gt;&lt;/div&gt;"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FormPayload" Type="InOutArgument(njl:JObject)" />
+    <x:Property Name="LayoutTemplate" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>SetupSchemaObjects_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="InitViewObjects" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="njl:JObject" Name="jobjView" />
+      <Variable x:TypeArguments="njl:JObject" Name="jobjLayout" />
+      <Variable x:TypeArguments="njl:JProperty" Name="jpropView" />
+      <Variable x:TypeArguments="njl:JProperty" Name="jpropLayout" />
+      <Variable x:TypeArguments="njl:JObject" Name="jobjBindings" />
+      <Variable x:TypeArguments="njl:JProperty" Name="jpropBindings" />
+    </Sequence.Variables>
+    <Assign DisplayName="Bindings Object" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[jobjBindings]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[New JObject]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Layout Object" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[jobjLayout]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[New JObject]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="View Object" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[jobjView]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[New JObject]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Bindings Property" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JProperty">[jpropBindings]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JProperty">[New JProperty("bindings", jobjBindings)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <InvokeMethod DisplayName="Add bindings to layout object" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Add">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="njl:JObject">[jobjLayout]</InArgument>
+      </InvokeMethod.TargetObject>
+      <InArgument x:TypeArguments="njl:JProperty">[jpropBindings]</InArgument>
+    </InvokeMethod>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddPropertyToJObject workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">template</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[LayoutTemplate]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjLayout]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Assign DisplayName="Layout Property" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JProperty">[jpropLayout]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JProperty">[New JProperty("layout", jobjLayout)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <InvokeMethod DisplayName="Add Layout to view object" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="Add">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="njl:JObject">[jobjView]</InArgument>
+      </InvokeMethod.TargetObject>
+      <InArgument x:TypeArguments="njl:JProperty">[jpropLayout]</InArgument>
+    </InvokeMethod>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddPropertyToJObject workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">parent</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">["bootstrap-edit"]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjView]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <Assign DisplayName="Properties Property" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JProperty">[jpropView]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JProperty">[New JProperty("view", jobjView)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <InvokeMethod DisplayName="Add view to root object" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
+      <InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="njl:JObject">[FormPayload]</InArgument>
+      </InvokeMethod.TargetObject>
+      <InArgument x:TypeArguments="njl:JProperty">[jpropView]</InArgument>
+    </InvokeMethod>
+    <sads:DebugSymbol.Symbol>d1dDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEZvcm1CdWlsZGVyTGlicmFyeVxDb21tb25cSW5pdFZpZXdPYmplY3RzLnhhbWwnAW8B/wEBAkkDowEOAgEBUgVZDgIBMloFYQ4CAS5iBWkOAgEqagVxDgIBJnIFdxQCASF4BX4dAgEafwWGAQ4CARaHAQWMARQCARGNAQWTAR0CAQuUAQWbAQ4CAQecAQWhARQCAQJXM1dAAgE1VDRUQgIBM18zX0ACATFcNFxAAgEvZzNnQAIBLWQ0ZD4CAStvNW9eAgEpbDZsRQIBJ3YzdkICASR0M3Q/AgEie0J7UgIBH3xDfE8CAR16QXpJAgEceMEBeOMBAgEbhAE1hAFaAgEZgQE2gQFDAgEXiwEziwFAAgEUiQEziQE9AgESkAFCkAFUAgEQkQFDkQFNAgEOjwFBjwFHAgENjQHBAY0B4wECAQyZATWZAVYCAQqWATaWAUECAQigATOgAT4CAQWeATOeAUACAQM=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
+      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
+      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
+      <sap2010:ViewStateData Id="InvokeMethod_4" sap:VirtualizedContainerService.HintSize="313.714285714286,138.285714285714" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_4" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
+      <sap2010:ViewStateData Id="InvokeMethod_3" sap:VirtualizedContainerService.HintSize="313.714285714286,138.285714285714" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_3" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
+      <sap2010:ViewStateData Id="InvokeMethod_2" sap:VirtualizedContainerService.HintSize="313.714285714286,138.285714285714" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1477.71428571429">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="SetupSchemaObjects_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1557.71428571429" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

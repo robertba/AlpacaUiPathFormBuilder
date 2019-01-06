@@ -1,0 +1,171 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" this:Main.SubmitButtonText="Submit" this:Main.LayoutTemplate="&lt;div class='row'&gt;&lt;div class='col-md-6' id='column-1'&gt;&lt;/div&gt;&lt;div class='col-md-6' id='column-2'&gt;&lt;/div&gt;&lt;/div&gt;" this:Main.SubmitButtonStyle="btn btn-primary btn-lg" this:Main.FormTitle="Form 1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FormPayload" Type="OutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="SubmitButtonText" Type="InArgument(x:String)" />
+    <x:Property Name="LayoutTemplate" Type="InArgument(x:String)" />
+    <x:Property Name="SubmitButtonStyle" Type="InArgument(x:String)" />
+    <x:Property Name="FormTitle" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json.Schema</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="sFormString" />
+      <Variable x:TypeArguments="njl:JObject" Name="JSONPayload" />
+    </Sequence.Variables>
+    <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Assign sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[FormPayload]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[New Dictionary(Of String, Object)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap2010:WorkflowViewState.IdRef="Assign_10">
+        <Assign.To>
+          <OutArgument x:TypeArguments="njl:JObject">[JSONPayload]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="njl:JObject">[New JObject]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <InvokeMethod DisplayName="Invoke Method" sap2010:WorkflowViewState.IdRef="InvokeMethod_4" MethodName="Add">
+        <InvokeMethod.TargetObject>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[FormPayload]</InArgument>
+        </InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="x:String">formjson</InArgument>
+        <InArgument x:TypeArguments="x:Object">[JSONPayload]</InArgument>
+      </InvokeMethod>
+      <InvokeMethod DisplayName="Invoke Method" sap2010:WorkflowViewState.IdRef="InvokeMethod_5" MethodName="Add">
+        <InvokeMethod.TargetObject>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[FormPayload]</InArgument>
+        </InvokeMethod.TargetObject>
+        <InArgument x:TypeArguments="x:String">formtitle</InArgument>
+        <InArgument x:TypeArguments="x:Object">[FormTitle]</InArgument>
+      </InvokeMethod>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitSchemaObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Common\InitSchemaObjects.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="FormTitle">[FormTitle]</InArgument>
+          <InOutArgument x:TypeArguments="njl:JObject" x:Key="FormPayload">[JSONPayload]</InOutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitOptionsObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Common\InitOptionsObjects.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InOutArgument x:TypeArguments="njl:JObject" x:Key="FormPayload">[JSONPayload]</InOutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitViewObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Common\InitViewObjects.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InOutArgument x:TypeArguments="njl:JObject" x:Key="FormPayload">[JSONPayload]</InOutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="LayoutTemplate">[LayoutTemplate]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FormButton workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Common\FormButton.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InOutArgument x:TypeArguments="njl:JObject" x:Key="FormPayload">[JSONPayload]</InOutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Title">[SubmitButtonText]</InArgument>
+          <InArgument x:TypeArguments="x:Object" x:Key="Click">["[SUBMITCLICK]"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Name">[SubmitButtonText]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Styles">[SubmitButtonStyle]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>d1JDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXFN0YXJ0Rm9ybS54YW1sJgF3AYcCAQUB0gIB2QIBBAGlAgG8AgEDAVUBXAECTwOPAQ4CAQFUBY0BEAIBAlUHXBACAS1dB2QQAgEpZQdrFgIBJGwHchYCAR5zB3gfAgEYeQd9HwIBFH4HgwEfAgEOhAEHjAEfAgEDWkxabwIBMFdNV1oCAS5iNWJCAgEsXzZfQwIBKmowaj0CAShpMGk4AgEnZ0xnWQIBJXEwcTsCASJwMHA5AgEhbkxuWQIBH3VEdU8CARx2THZZAgEac8EBc+ABAgEZe0x7WQIBFnnCAXniAQIBFYEBSYEBWQIBEoABTIABWQIBEH6/AX7cAQIBD4oBQYoBVAIBDIYBTIYBWQIBCocBQIcBUgIBCIgBQIgBUQIBB4QBugGEAdIBAgEGiQE/iQFRAgEE</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="InvokeMethod_4" sap:VirtualizedContainerService.HintSize="313.714285714286,134.857142857143" />
+      <sap2010:ViewStateData Id="InvokeMethod_5" sap:VirtualizedContainerService.HintSize="313.714285714286,134.857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_11" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_12" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_13" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_14" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="335.428571428571,1138.28571428571">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="357.142857142857,1261.71428571429">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="397.142857142857,1341.71428571429" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

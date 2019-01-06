@@ -1,0 +1,25 @@
+{
+  "name": "AlpacaUiPath Form Builder Template Project",
+  "description": "AlpacaUiPath Demonstrations in Form Building and Form Generation",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.UIAutomation.Activities": "[18.4.2]",
+    "UiPath.System.Activities": "[18.4.1]",
+    "AlpacaUiPathFormBuilderLib": "1.0.0.68"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.4.1.0",
+  "projectVersion": "1.0.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  }
+}

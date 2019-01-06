@@ -1,0 +1,190 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="TextField" this:TextField.LayoutBinding="column-1" this:TextField.MinLength="0" this:TextField.MaxLength="40" this:TextField.IsReadOnly="False" this:TextField.IsRequired="False" this:TextField.IsHidden="False"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="DefaultValue" Type="InArgument(x:Object)" />
+    <x:Property Name="Caption" Type="InArgument(x:String)" />
+    <x:Property Name="Name" Type="InArgument(x:String)" />
+    <x:Property Name="FormPayload" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="LayoutBinding" Type="InArgument(x:String)" />
+    <x:Property Name="MinLength" Type="InArgument(x:Int32)" />
+    <x:Property Name="MaxLength" Type="InArgument(x:Int32)" />
+    <x:Property Name="IsReadOnly" Type="InArgument(x:Boolean)" />
+    <x:Property Name="IsRequired" Type="InArgument(x:Boolean)" />
+    <x:Property Name="IsHidden" Type="InArgument(x:Boolean)" />
+    <x:Property Name="Description" Type="InArgument(x:String)" />
+    <x:Property Name="Pattern" Type="InArgument(x:String)" />
+    <x:Property Name="Helper" Type="InArgument(x:String)" />
+    <x:Property Name="fieldClass" Type="InArgument(x:String)" />
+    <x:Property Name="helpers" Type="InArgument(s:String[])" />
+    <x:Property Name="helpersPosition" Type="InArgument(x:String)" />
+    <x:Property Name="id" Type="InArgument(x:String)" />
+    <x:Property Name="Format" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:TextField.Pattern>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:TextField.Pattern>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>TextField_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Color" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="njl:JObject" Name="jobjProperties" />
+      <Variable x:TypeArguments="njl:JObject" Name="jobjControlSchema" />
+      <Variable x:TypeArguments="njl:JProperty" Name="jpropControl" />
+      <Variable x:TypeArguments="njl:JObject" Name="jobjLayout" />
+      <Variable x:TypeArguments="njl:JObject" Name="jobjFields" />
+      <Variable x:TypeArguments="njl:JObject" Name="jobjControlOptions" />
+      <Variable x:TypeArguments="njl:JProperty" Name="jpropControlOptions" />
+    </Sequence.Variables>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitializeObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="CommonControls\InitializeObjects.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjProperties">[jobjProperties]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjControlSchema">[jobjControlSchema]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjControlOptions">[jobjControlOptions]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjLayout">[jobjLayout]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="Name">[Name]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjFields">[jobjFields]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControl">[jpropControl]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke StoreCtrlTypeLoaded workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="CommonControls\StoreCtrlTypeLoaded.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CtrlType">COLOR</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke common Text Field workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="CommonControls\TextField.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue">[DefaultValue]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength">[MinLength]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern">[Pattern]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength">[MaxLength]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jObjControlSchema">[jobjControlSchema]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Type" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">type</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">["color"]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke commonGlobal workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="CommonControls\SetCommonProperties.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="Description">[Description]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly">[IsReadOnly]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired">[IsRequired]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Caption">[Caption]</InArgument>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="jObjControlSchema">[jobjControlSchema]</InArgument>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="jobjControlOptions">[jobjControlOptions]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Helper">[Helper]</InArgument>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="jobjLayout">[jobjLayout]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding">[LayoutBinding]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Name">[Name]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden">[IsHidden]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass">[fieldClass]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers">[helpers]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition">[helpersPosition]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="id">[id]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Format">[Format]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BindObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="CommonControls\BindObjects.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjProperties">[jobjProperties]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControl">[jpropControl]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjFields">[jobjFields]</InOutArgument>
+        <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <sads:DebugSymbol.Symbol>d1JDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXGN0cmxDb2xvci54YW1sOwGAAQGCAQEIAZ0BAaABAQcBXAFlAQYlByU2AQUBvAEBwgEBBAH+AQGEAgEDAd4BAeQBAQJhA6sBDgIBAWsFdx0CAUV4BX0dAgFAfgWGAR0CATSHAQWNAR0CAS6OAQWhAR0CAQyiAQWpAR0CAQJwUXBlAgFXcklyVQIBVW5Nbl0CAVN0SXRVAgFRbV5tawIBT29Qb2MCAU1xVHFpAgFLdU11WwIBSWu/AWvmAQIBSHNAc0YCAUZ6YXpuAgFDe0F7RgIBQnjBAXjqAQIBQYABRYABUwIBPoEBQYEBTAIBPIMBQYMBTAIBOoQBUIQBYwIBOIIBQIIBSQIBNn6/AX7eAQIBNYoBQooBSwIBM4sBQ4sBVwIBMYkBQYkBRQIBMIcBogGHAcQBAgEvlQFOlQFiAgEsnwE/nwFHAgEqnAFCnAFLAgEonQFInQFZAgEmmAFGmAFVAgEkkAFEkAFRAgEikwFAkwFJAgEglAFNlAFgAgEelgE/lgFHAgEclwFGlwFSAgEamwFDmwFPAgEYkQFEkQFQAgEWmgFCmgFMAgEUngE7ngE/AgESjgG6AY4B4wECARGSAUSSAVACAQ+ZAT2ZAUMCAQ2kAU2kAV0CAQqmAUmmAVUCAQinAVSnAWkCAQalAU2lAVsCAQSiAbkBogHaAQIBAw==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_29" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_32" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_26" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_27" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_30" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,841.142857142857">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="375.428571428571,921.142857142857" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

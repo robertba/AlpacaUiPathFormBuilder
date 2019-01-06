@@ -1,0 +1,286 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="RenderForm" this:RenderForm.SubmitClick="[&quot;function() {&quot; + Environment.NewLine +&#xA;&quot;                      this.refreshValidationState(true);&quot; + Environment.NewLine +&#xA;&quot;                      if (this.isValid(true)) {&quot; + Environment.NewLine +&#xA;&quot;                          var value = this.getValue();&quot; + Environment.NewLine +&#xA;&quot;       if (typeof (window.external) !== 'undefined' &amp;&amp; ('setResult' in window.external)) {&quot; + Environment.NewLine +&#xA;&quot;      window.external.setResult(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;       else {&quot; + Environment.NewLine +&#xA;&quot;        alert(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;                       }&quot; + Environment.NewLine +&#xA;&quot;                  }&quot;]" this:RenderForm.FooterHTML="&lt;h3&gt;This form is powered by &lt;a href='http://www.uipath.com' target='_blank'&gt;Uipath&lt;/a&gt;&lt;/h3&gt;" this:RenderForm.IncludeJQuery="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&quot; integrity=&quot;&quot;sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeHandlebars="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeBootstrap="[&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; href=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&quot; integrity=&quot;&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;script src=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&quot; integrity=&quot;&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeAlpaca="[&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeJQueryUI="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.min.js&quot;&quot; integrity=&quot;&quot;sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeDateTimePicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeCurrency="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-price-format/2.2.0/jquery.priceformat.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeColorPicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeColor="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeSelect="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeCKEditor="[&quot;&lt;script src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js' type='text/javascript'&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeSummerNoteEditor="[&quot;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.min.js' type='text/javascript'&gt;&lt;/script&gt;&quot;  + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel='stylesheet' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css'/&gt;&quot; + Environment.NewLine]" this:RenderForm.LogoHTML="&lt;img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/&gt;"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:this="clr-namespace:"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="SubmitClick" Type="InArgument(x:String)" />
+    <x:Property Name="OutFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="FooterHTML" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeJQuery" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeHandlebars" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeBootstrap" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeAlpaca" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeJQueryUI" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeDateTimePicker" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeCurrency" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeColorPicker" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeColor" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeSelect" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeCKEditor" Type="InArgument(x:String)" />
+    <x:Property Name="IncludeSummerNoteEditor" Type="InArgument(x:String)" />
+    <x:Property Name="LogoHTML" Type="InArgument(x:String)" />
+    <x:Property Name="FormPayload" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>RenderForm_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RenderForm" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="sResult" />
+      <Variable x:TypeArguments="x:String" Name="sFormText" />
+    </Sequence.Variables>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_42">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;!DOCTYPE html&gt;" + Environment.NewLine +
+"&lt;html&gt;" + Environment.NewLine + 
+"&lt;head&gt;" + Environment.NewLine +
+"&lt;meta http-equiv=""X-UA-Compatible"" content=""IE=Edge,chrome=1""&gt;" + Environment.NewLine +
+IncludeJQuery +
+IncludeHandlebars +
+IncludeBootstrap +
+"&lt;!-- alpaca --&gt;" + Environment.NewLine + 
+IncludeAlpaca]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_55">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; IncludeJQueryUI + IncludeDateTimePicker]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_56">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; IncludeCurrency]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_57">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; IncludeSummerNoteEditor]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_58">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; IncludeCKEditor]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_59">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; IncludeSelect]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_60">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; IncludeColor]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_61">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp; "&lt;script src=""http://www.alpacajs.org/lib/tinycolor/dist/tinycolor-min.js""&gt;&lt;/script&gt;" + Environment.NewLine +
+"&lt;script src=""http://www.alpacajs.org/lib/pick-a-color-m/build/1.2.3/js/pick-a-color-1.2.3.min.js""&gt;&lt;/script&gt;" + Environment.NewLine +
+"&lt;link rel=""stylesheet"" media=""screen"" href=""http://www.alpacajs.org/lib/pick-a-color-m/build/1.2.3/css/pick-a-color-1.2.3.min.css""/&gt;" + Environment.NewLine]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_62">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; IncludeColorPicker]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Close Head" sap2010:WorkflowViewState.IdRef="Assign_43">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText &amp; "&lt;/head&gt;"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_44">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp;  "&lt;body&gt;" + Environment.NewLine +
+"&lt;div class='row'&gt;" + Environment.NewLine +
+"&lt;div class='col-md-1'&gt;&lt;/div&gt;" + Environment.NewLine +
+"&lt;div class='col-md-10'&gt;" + Environment.NewLine +
+"&lt;div class='row'&gt;" + Environment.NewLine +
+"&lt;div class='col-md-3'&gt;" + LogoHTML + "&lt;/div&gt;" + Environment.NewLine +
+"&lt;div class='col-md-9'&gt;&lt;ul class='nav nav-pills'&gt;" + Environment.NewLine]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_63">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp;  "  &lt;li class='active btn-lg'&gt;&lt;a data-toggle='pill' href='#form" + 1.ToString + "'&gt;" + "Form Title"+ "&lt;/a&gt;&lt;/li&gt;" + Environment.NewLine]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_64">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp;  "&lt;/ul&gt;&lt;/div&gt;" + Environment.NewLine +
+"&lt;/div&gt;" + Environment.NewLine +
+"&lt;hr size='5' /&gt;" + Environment.NewLine +
+"&lt;div class='tab-content'&gt;" + Environment.NewLine]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_66">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp; "&lt;div id='form"+ 1.ToString + "' class='tab-pane fade in active'&gt;" + Environment.NewLine +
+"&lt;h2&gt;" + "Form Title" + "&lt;/h2&gt;" + Environment.NewLine +
+"&lt;div id='form" + 1.ToString + "'&gt;&lt;/div&gt;" + Environment.NewLine + 
+"&lt;script type=""text/javascript""&gt;" + Environment.NewLine + 
+"$(""#form" + 1.ToString + """).alpaca(" + Environment.NewLine +
+FormPayload + Environment.NewLine +
+");" + Environment.NewLine +
+"&lt;/script&gt;" + Environment.NewLine +
+"&lt;/div&gt;" + Environment.NewLine]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Footer and End" sap2010:WorkflowViewState.IdRef="Assign_51">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp; "&lt;/div&gt;" + Environment.NewLine +
+"&lt;div Class='col-md-1'&gt;&lt;/div&gt;" + Environment.NewLine +
+FooterHTML + Environment.NewLine +
+"&lt;/div&gt;" + Environment.NewLine +
+"&lt;/div&gt;" + Environment.NewLine +
+"&lt;/body&gt;" + Environment.NewLine +
+"&lt;/html&gt;"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Replace clicks" sap2010:WorkflowViewState.IdRef="Assign_48">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[sFormText.Replace("""[SUBMITCLICK]""", SubmitClick)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:WriteTextFile DisplayName="Write text file" FileName="[OutFilePath]" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[sFormText]" />
+    <sads:DebugSymbol.Symbol>d2BDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXFJlbmRlclZpc3VhbGx5QnVpbHRGb3JtLnhhbWw8AbEbAccgARABvggBsgkBDwG3EwHnFgEOAYEOAZcTAQ0BhQwB3g0BDAHSCQHhCwELAaQyAaAzAQoBXAGhCAEJAbQvAYkyAQgB9i0Bii8BBwHpIAHPIgEGAfQiAb4mAQUB3SYB7CkBBAGJFwGJGwEDAYwqAdQtAQJYA4ACDgIBAV0FbA4CAVVtBXQOAgFOdQV8DgIBSH0FhAEOAgFChQEFjAEOAgE8jQEFlAEOAgE2lQEFnAEOAgEwnQEFpgEOAgEspwEFrgEOAgEmrwEFtgEOAgEhtwEFxAEOAgEdxQEFzAEOAgEZzQEF1wEOAgEV2AEF5wEOAgER6AEF9QEOAgEN9gEF/QEOAgEH/gEF/gGVAQIBAl8xXzwCAVZyMHJpAgFRbzFvPAIBT3owelECAUt3MXc8AgFJggEwggFZAgFFfzF/PAIBQ4oBMIoBUQIBP4cBMYcBPAIBPZIBMJIBTwIBOY8BMY8BPAIBN5oBMJoBTgIBM5cBMZcBPAIBMZ8BMZ8BPAIBLawBMKwBVAIBKakBMakBPAIBJ7QBMLQBUQIBJLEBMbEBPAIBIrkBMbkBPAIBHscBMccBPAIBGs8BMc8BPAIBFtoBMdoBPAIBEuoBMeoBPAIBDvsBMPsBZQIBCvgBMfgBPAIBCP4BhQH+AZIBAgEF/gE+/gFNAgED</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Assign_42" sap:VirtualizedContainerService.HintSize="313.714285714286,64" />
+      <sap2010:ViewStateData Id="Assign_55" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_56" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_57" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_58" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_59" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_60" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_61" sap:VirtualizedContainerService.HintSize="313.714285714286,64" />
+      <sap2010:ViewStateData Id="Assign_62" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_43" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_44" sap:VirtualizedContainerService.HintSize="313.714285714286,64" />
+      <sap2010:ViewStateData Id="Assign_63" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="Assign_64" sap:VirtualizedContainerService.HintSize="313.714285714286,64" />
+      <sap2010:ViewStateData Id="Assign_66" sap:VirtualizedContainerService.HintSize="313.714285714286,64" />
+      <sap2010:ViewStateData Id="Assign_51" sap:VirtualizedContainerService.HintSize="313.714285714286,64" />
+      <sap2010:ViewStateData Id="Assign_48" sap:VirtualizedContainerService.HintSize="313.714285714286,60" />
+      <sap2010:ViewStateData Id="WriteTextFile_1" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1833.71428571429">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="RenderForm_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1913.71428571429" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

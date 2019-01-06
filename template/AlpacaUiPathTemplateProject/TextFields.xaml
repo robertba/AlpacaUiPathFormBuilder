@@ -1,0 +1,194 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="TextFields" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="TextFields_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:a="clr-namespace:AlpacaUiPathFormBuilderLib;assembly=AlpacaUiPathFormBuilderLib"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TextFields" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="FormPayload" />
+      <Variable x:TypeArguments="x:String" Name="sResult" />
+      <Variable x:TypeArguments="njl:JObject" Name="jObjOutput" />
+    </Sequence.Variables>
+    <a:StartForm FormPayload="[FormPayload]" FormTitle="Text Field Examples" sap2010:WorkflowViewState.IdRef="StartForm_2" LayoutTemplate="&lt;div class='row'&gt;&lt;div class='col-md-6' id='column-1'&gt;&lt;/div&gt;&lt;div class='col-md-6' id='column-2'&gt;&lt;/div&gt;&lt;/div&gt;" SubmitButtonStyle="btn btn-primary btn-lg" SubmitButtonText="Submit" />
+    <a:ctrlTextField DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxLength="{x:Null}" MinLength="{x:Null}" Pattern="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Text Field" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextField_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" Name="cTextField" />
+    <a:ctrlCurrency Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" Prefix="{x:Null}" Suffix="{x:Null}" centsLimit="{x:Null}" centsSeparator="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" thousandsSeparator="{x:Null}" Caption="Currency" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlCurrency_2" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-2" MaxLength="40" MinLength="0" Name="cCurrency" Round="none" Unmask="True" insertPlusSign="False">
+      <a:ctrlCurrency.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlCurrency.Pattern>
+    </a:ctrlCurrency>
+    <a:ctrlTextField DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxLength="{x:Null}" Pattern="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Required Text Field, Min Length 3" DisplayName="Min length 3, Required" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextField_2" IsHidden="False" IsReadOnly="False" IsRequired="True" LayoutBinding="column-1" MinLength="3" Name="cTextFieldWithValidation" />
+    <a:ctrlDateTime DefaultValue="{x:Null}" Description="{x:Null}" Helper="{x:Null}" Rows="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Date Picker, Manual Entry Allowed" DateFormat="MM/DD/YY" DisplayName="ctlDate" FormPayload="[FormPayload]" Format="date" sap2010:WorkflowViewState.IdRef="ctrlDateTime_2" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-2" ManualEntry="True" MaxLength="40" MinLength="0" Name="cDate" pickerFormat="MM/DD/YY">
+      <a:ctrlDateTime.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlDateTime.Pattern>
+    </a:ctrlDateTime>
+    <a:ctrlTextField Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxLength="{x:Null}" MinLength="{x:Null}" Pattern="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Text Field with Default" DefaultValue="[&quot;the default value.&quot;]" DisplayName="ctrlTextField with default" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextField_3" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" Name="cTextFieldWithDefault" />
+    <a:ctrlDateTime DefaultValue="{x:Null}" Description="{x:Null}" Helper="{x:Null}" Rows="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Date/Time Picker" DateFormat="MM/DD/YYYY hh:mm:ss a" DisplayName="ctlDateTime" FormPayload="[FormPayload]" Format="datetime" sap2010:WorkflowViewState.IdRef="ctrlDateTime_3" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-2" ManualEntry="False" MaxLength="40" MinLength="0" Name="cDateTime" pickerFormat="MM/DD/YYYY hh:mm:ss a">
+      <a:ctrlDateTime.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlDateTime.Pattern>
+    </a:ctrlDateTime>
+    <a:ctrlNumber DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" Maximum="{x:Null}" Minimum="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Number" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlNumber_2" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" MaxLength="40" MinLength="0" Name="cNumber">
+      <a:ctrlNumber.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlNumber.Pattern>
+    </a:ctrlNumber>
+    <a:ctrlTextArea DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" Rows="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Text Area" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextArea_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-2" MaxLength="40" MinLength="0" Name="cTextArea">
+      <a:ctrlTextArea.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlTextArea.Pattern>
+    </a:ctrlTextArea>
+    <a:ctrlTextFieldEmail DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Email Field" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextFieldEmail_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" MaxLength="40" MinLength="0" Name="cTextEmail">
+      <a:ctrlTextFieldEmail.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlTextFieldEmail.Pattern>
+    </a:ctrlTextFieldEmail>
+    <a:ctrlPassword DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Password" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlPassword_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-2" MaxLength="40" MinLength="0" Name="cPassword">
+      <a:ctrlPassword.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlPassword.Pattern>
+    </a:ctrlPassword>
+    <a:ctrlTextFieldURL DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="URL Field" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextFieldURL_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" MaxLength="40" MinLength="0" Name="cTextFieldURL">
+      <a:ctrlTextFieldURL.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlTextFieldURL.Pattern>
+    </a:ctrlTextFieldURL>
+    <a:ctrlTextFieldZipCode DefaultValue="{x:Null}" Description="{x:Null}" Helper="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="5 Digit Zip Code" FormPayload="[FormPayload]" Format="five" sap2010:WorkflowViewState.IdRef="ctrlTextFieldZipCode_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-2" MaxLength="40" MinLength="0" Name="cTextFieldZip">
+      <a:ctrlTextFieldZipCode.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlTextFieldZipCode.Pattern>
+    </a:ctrlTextFieldZipCode>
+    <a:ctrlTextFieldPhone DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Phone Field" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextFieldPhone_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" MaxLength="40" MinLength="0" Name="cTextFieldPhone">
+      <a:ctrlTextFieldPhone.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlTextFieldPhone.Pattern>
+    </a:ctrlTextFieldPhone>
+    <a:ctrlFile DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" Caption="File Selector" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlFile_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" MaxLength="40" MinLength="0" Name="cFile" id="fileid">
+      <a:ctrlFile.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlFile.Pattern>
+    </a:ctrlFile>
+    <a:RenderForm FooterHTML="&lt;h3&gt;This form is powered by &lt;a href='http://www.uipath.com' target='_blank'&gt;Uipath&lt;/a&gt;&lt;/h3&gt;" FormPayloads="[{FormPayload}]" sap2010:WorkflowViewState.IdRef="RenderForm_3" IncludeAlpaca="[&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeBootstrap="[&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; href=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&quot; integrity=&quot;&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;script src=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&quot; integrity=&quot;&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeCKEditor="[&quot;&lt;script src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js' type='text/javascript'&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeColor="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeColorPicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeCurrency="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-price-format/2.2.0/jquery.priceformat.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeDateTimePicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeHandlebars="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQuery="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&quot; integrity=&quot;&quot;sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQueryUI="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.min.js&quot;&quot; integrity=&quot;&quot;sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSelect="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSummerNoteEditor="[&quot;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.min.js' type='text/javascript'&gt;&lt;/script&gt;&quot;  + Environment.NewLine +&#xA;&quot;&lt;link rel='stylesheet' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css'/&gt;&quot; + Environment.NewLine]" LogoHTML="&lt;img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/&gt;" OutFilePath="[Environment.CurrentDirectory + &quot;\\textfields.html&quot;]" SubmitClick="[&quot;function() {&quot; + Environment.NewLine +&#xA;&quot;                      this.refreshValidationState(true);&quot; + Environment.NewLine +&#xA;&quot;                      if (this.isValid(true)) {&quot; + Environment.NewLine +&#xA;&quot;                          var value = this.getValue();&quot; + Environment.NewLine +&#xA;&quot;       if (typeof (window.external) !== 'undefined' &amp;&amp; ('setResult' in window.external)) {&quot; + Environment.NewLine +&#xA;&quot;      window.external.setResult(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;       else {&quot; + Environment.NewLine +&#xA;&quot;        alert(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;                       }&quot; + Environment.NewLine +&#xA;&quot;                  }&quot;]" />
+    <ui:CustomInput DisplayName="Custom Input" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="textfields.html" />
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jObjOutput]" JsonString="[sResult]" />
+    <If Condition="[not jObjOutput Is Nothing AndAlso jObjOutput.Count &gt; 0]" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[sResult]" TopMost="True" />
+      </If.Then>
+    </If>
+    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="StartForm_2" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextField_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlCurrency_2" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextField_2" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlDateTime_2" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextField_3" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlDateTime_3" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlNumber_2" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextArea_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextFieldEmail_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlPassword_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextFieldURL_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextFieldZipCode_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlTextFieldPhone_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlFile_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="RenderForm_3" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="CustomInput_1" sap:VirtualizedContainerService.HintSize="464,90.2857142857143" />
+      <sap2010:ViewStateData Id="DeserializeJson`1_1" sap:VirtualizedContainerService.HintSize="464,61.1428571428571" />
+      <sap2010:ViewStateData Id="MessageBox_2" sap:VirtualizedContainerService.HintSize="313.714285714286,58.2857142857143" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,213.714285714286" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="485.714285714286,1556">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TextFields_1" sap:VirtualizedContainerService.HintSize="525.714285714286,1636" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

@@ -1,0 +1,159 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Select"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="jobjControlSchema" Type="InOutArgument(njl:JObject)" />
+    <x:Property Name="DefaultValue" Type="InArgument(x:Object)" />
+    <x:Property Name="arrEnum" Type="InArgument(s:String[])" />
+    <x:Property Name="jobjControlOptions" Type="InOutArgument(njl:JObject)" />
+    <x:Property Name="optionLabels" Type="InArgument(s:String[])" />
+    <x:Property Name="IsMultiple" Type="InArgument(x:Boolean)" />
+    <x:Property Name="NoneLabel" Type="InArgument(x:String)" />
+    <x:Property Name="removeDefaultNone" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Select_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Select" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Type" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">type</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">["string"]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlSchema]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Default" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">default</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[DefaultValue]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlSchema]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Enum" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">enum</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[arrEnum]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlSchema]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Labels" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">optionLabels</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[optionLabels]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <If Condition="[IsMultiple = True]" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Multiple" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="PropName">multiple</InArgument>
+            <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[IsMultiple]</InArgument>
+            <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </If.Then>
+    </If>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option None Label" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">noneLabel</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[NoneLabel]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <If Condition="[removeDefaultNone = True]" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Remove Default None" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="PropName">removeDefaultNone</InArgument>
+            <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[removeDefaultNone]</InArgument>
+            <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </If.Then>
+    </If>
+    <sads:DebugSymbol.Symbol>d15DOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXENvbW1vbkNvbnRyb2xzXFNlbGVjdC54YW1sKE4DiQEOAgEBTwVVHQIBMlYFXB0CAStdBWMdAgEkZAVqHQIBHWsFdQoCARN2BXwdAgEMfQWHAQoCAQJSQlJMAgE3U0NTVgIBNVFBUUUCATRPoQFPwwECATNZQllQAgEwWkNaVgIBLlhBWEgCAS1WpAFWxgECASxgQmBLAgEpYUNhVgIBJ19BX0UCASZdoQFdwwECASVnQmdQAgEiaENoVwIBIGZBZk0CAR9kqgFkzAECAR5rE2soAgEUbQlzIQIBFnlCeU0CARF6Q3pXAgEPeEF4SgIBDnauAXbQAQIBDX0TfS8CAQN/CYUBIQIBBXBGcFICARtxR3FbAgEZb0VvTQIBGG2wAW3SAQIBF4IBRoIBWQIBCoMBR4MBWwIBCIEBRYEBVgIBB3+8AX/eAQIBBg==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_1" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_2" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_3" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_9" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,240" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_7" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_10" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="464,240" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="485.714285714286,1274.85714285714">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Select_1" sap:VirtualizedContainerService.HintSize="525.714285714286,1354.85714285714" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
