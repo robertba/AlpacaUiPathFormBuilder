@@ -1,4 +1,7 @@
 # Alpaca UiPath Form Builder
+
+[Alpaca UiPath Form Builder](resources/logo/alpacaUiPath_logo.png)
+
 This library and project template allows UiPath Studio users to build rich HTML forms with a variety of UI controls and configurable validation.  Forms can be built in one of two ways:
 
 1.  In Studio by adding activities associated with specific HTML controls into their workflow
