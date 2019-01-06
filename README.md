@@ -1,6 +1,6 @@
 # Alpaca UiPath Form Builder
 
-[Alpaca UiPath Form Builder](resources/logo/alpacaUiPath_logo.png)
+![Alpaca UiPath Form Builder](resources/logo/alpacaUiPath_logo.png)
 
 This library and project template allows UiPath Studio users to build rich HTML forms with a variety of UI controls and configurable validation.  Forms can be built in one of two ways:
 
@@ -31,12 +31,12 @@ The activities in the Alpaca UiPath form builder library are also aimed at allow
 
 ## Video
 ### Form Building Method 1
-1.  [The Basics](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/01_AlpacaUiPath_FormBuilding_Method1_Basics.mp4?raw=true)
-2.  [Multiple Forms](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/02_AlpacaUiPath_FormBuilding_Method1_MultipleForms.mp4?raw=true)
-3.  [Different Layouts, Build Forms in a Loop](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/03_AlpacaUiPath_FormBuilding_Method1_LayoutsAndGeneration.mp4?raw=true)
+1.  [The Basics](resources/video/01_AlpacaUiPath_FormBuilding_Method1_Basics.mp4?raw=true)
+2.  [Multiple Forms](resources/video/02_AlpacaUiPath_FormBuilding_Method1_MultipleForms.mp4?raw=true)
+3.  [Different Layouts, Build Forms in a Loop](resources/video/03_AlpacaUiPath_FormBuilding_Method1_LayoutsAndGeneration.mp4?raw=true)
 
 ### Form Building Method 2
 [Basics]
 
 ### Available Controls
-[Control Showcase](https://github.com/robertba/AlpacaUiPathFormBuilder/blob/master/resources/video/04_AlpacaUiPath_FormBuilding_ControlTypes.mp4?raw=true)
+[Control Showcase](resources/video/04_AlpacaUiPath_FormBuilding_ControlTypes.mp4?raw=true)
