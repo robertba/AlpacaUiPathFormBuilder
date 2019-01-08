@@ -719,9 +719,9 @@
     "restore": {
       "projectUniqueName": "AlpacaUiPathFormBuilderLib",
       "projectName": "AlpacaUiPathFormBuilderLib",
-      "projectPath": "C:\\Users\\Robert Baptist\\Documents\\UiPath\\AlpacaUiPathFormBuilderLib\\.local",
+      "projectPath": "C:\\Users\\Robert Baptist\\Documents\\UiPath\\AlpacaUiPathFormBuilder\\src\\AlpacaUiPathFormBuilderLib\\.local",
       "packagesPath": "C:\\Users\\Robert Baptist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Robert Baptist\\Documents\\UiPath\\AlpacaUiPathFormBuilderLib\\.local"
+      "outputPath": "C:\\Users\\Robert Baptist\\Documents\\UiPath\\AlpacaUiPathFormBuilder\\src\\AlpacaUiPathFormBuilderLib\\.local"
     },
     "frameworks": {
       "net461": {
