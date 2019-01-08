@@ -12,6 +12,8 @@ The "custom input" activity, introduced in the 2018.3 release, allows one to dis
 
 There is some demand for the capability in UiPath to build an input form (in the context of an attended process) where the input form itself had dynamically generated controls based on some other data in a process.  This project allows for this as you can do things like add controls to a form in a loop or add radio button, checkbox, or select options dynamically from some data.
 
+Beyond dynamically generated forms, it's also useful for UiPath Studio users to be able to build forms quickly without having to resort to using outside tools to do so.
+
 ## Technology
 The technology is built on top of Alpaca:  http://alpacajs.org/ .   Generally UiPath is used in this case to generate JSON that Alpaca can process and the HTML and Javascript around an Alpaca form.
 
