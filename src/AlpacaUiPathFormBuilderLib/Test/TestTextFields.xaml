@@ -86,7 +86,7 @@
         <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
         <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
-        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired">True</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
         <InArgument x:TypeArguments="x:String" x:Key="Description" />
         <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
@@ -284,7 +284,7 @@
     <ui:CustomInput DisplayName="Custom Input" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="textfields.html" />
     <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonObject="{x:Null}" DisplayName="Deserialize JSON" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonString="[sResult]" />
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[sResult]" TopMost="True" />
-    <sads:DebugSymbol.Symbol>d1xDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXFRlc3RcVGVzdFRleHRGaWVsZHMueGFtbDNBA6ACDgIBAUcFTh0CATtPBWQdAgE3ZQV6HQIBMnsFkAEdAgEukQEFpgEdAgEqpwEFwgEdAgEmwwEF2gEdAgEh2wEF8AEdAgEW8QEFhwIdAgERiAIFmwIdAgEMnAIFnAKLAQIBCJ0CBZ0CuwECAQWeAgWeArcBAgECSUJJUAIBQEpJSk8CAT9MX0xsAgE9R7YBR8YBAgE8VGFUbgIBOU/AAU/ZAQIBOHg/eEMCATZqYWpuAgE0ZcIBZd0BAgEzgAFhgAFuAgEwe74Be9UBAgEvlgFhlgFuAgEskQG6AZEBzQECASurAWGrAW4CASinAboBpwHNAQIBJ8YBQMYBRgIBJcgBYcgBbgIBI8MBuAHDAckBAgEi3QFF3QFIAgEg6AFB6AFKAgEf7AFI7AFNAgEe4QFG4QFOAgEd3gFA3gFQAgEc6QE/6QFGAgEb4AFh4AFuAgEZ2wG2AdsBygECARjfAT3fAUICAReAAj+AAkYCARX2AWH2AW4CARPxAbkB8QHMAQIBEosCRIsCUwIBEIgCtwGIAsgBAgEPmQJhmQJwAgENnAJ3nAKIAQIBC5wCZ5wCcgIBCZ0CrQGdArgBAgEGngKaAZ4CpQECAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3hDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxUZXN0XFRlc3RUZXh0RmllbGRzLnhhbWw0QQOgAg4CAQFHBU4dAgE8TwVkHQIBN2UFeh0CATJ7BZABHQIBLpEBBaYBHQIBKqcBBcIBHQIBJsMBBdoBHQIBIdsBBfABHQIBFvEBBYcCHQIBEYgCBZsCHQIBDJwCBZwCiwECAQidAgWdArsBAgEFngIFngK3AQIBAklCSVACAUFKSUpPAgFATF9MbAIBPke2AUfGAQIBPVRhVG4CATpPwAFP2QECATlZRFlIAgE4eD94QwIBNmpham4CATRlwgFl3QECATOAAWGAAW4CATB7vgF71QECAS+WAWGWAW4CASyRAboBkQHNAQIBK6sBYasBbgIBKKcBugGnAc0BAgEnxgFAxgFGAgElyAFhyAFuAgEjwwG4AcMByQECASLdAUXdAUgCASDoAUHoAUoCAR/sAUjsAU0CAR7hAUbhAU4CAR3eAUDeAVACARzpAT/pAUYCARvgAWHgAW4CARnbAbYB2wHKAQIBGN8BPd8BQgIBF4ACP4ACRgIBFfYBYfYBbgIBE/EBuQHxAcwBAgESiwJEiwJTAgEQiAK3AYgCyAECAQ+ZAmGZAnACAQ2cAnecAogBAgELnAJnnAJyAgEJnQKtAZ0CuAECAQaeApoBngKlAQIBAw==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
