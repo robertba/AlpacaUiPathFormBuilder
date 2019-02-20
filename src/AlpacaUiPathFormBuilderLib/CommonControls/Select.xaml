@@ -20,6 +20,7 @@
     <x:Property Name="IsMultiple" Type="InArgument(x:Boolean)" />
     <x:Property Name="NoneLabel" Type="InArgument(x:String)" />
     <x:Property Name="removeDefaultNone" Type="InArgument(x:Boolean)" />
+    <x:Property Name="Sort" Type="InArgument(x:Object)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -72,7 +73,6 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Select" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -101,6 +101,13 @@
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="PropName">optionLabels</InArgument>
         <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[optionLabels]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Sort" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">sort</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[sort]</InArgument>
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
@@ -133,7 +140,7 @@
         </ui:InvokeWorkflowFile>
       </If.Then>
     </If>
-    <sads:DebugSymbol.Symbol>d15DOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXENvbW1vbkNvbnRyb2xzXFNlbGVjdC54YW1sKE4DiQEOAgEBTwVVHQIBMlYFXB0CAStdBWMdAgEkZAVqHQIBHWsFdQoCARN2BXwdAgEMfQWHAQoCAQJSQlJMAgE3U0NTVgIBNVFBUUUCATRPoQFPwwECATNZQllQAgEwWkNaVgIBLlhBWEgCAS1WpAFWxgECASxgQmBLAgEpYUNhVgIBJ19BX0UCASZdoQFdwwECASVnQmdQAgEiaENoVwIBIGZBZk0CAR9kqgFkzAECAR5rE2soAgEUbQlzIQIBFnlCeU0CARF6Q3pXAgEPeEF4SgIBDnauAXbQAQIBDX0TfS8CAQN/CYUBIQIBBXBGcFICARtxR3FbAgEZb0VvTQIBGG2wAW3SAQIBF4IBRoIBWQIBCoMBR4MBWwIBCIEBRYEBVgIBB3+8AX/eAQIBBg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3pDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxDb21tb25Db250cm9sc1xTZWxlY3QueGFtbC1OA5ABDgIBAU8FVR0CATlWBVwdAgEyXQVjHQIBK2QFah0CASRrBXEdAgEdcgV8CgIBE30FgwEdAgEMhAEFjgEKAgECUkJSTAIBPlNDU1YCATxRQVFFAgE7T6EBT8MBAgE6WUJZUAIBN1pDWlYCATVYQVhIAgE0VqQBVsYBAgEzYEJgSwIBMGFDYVYCAS5fQV9FAgEtXaEBXcMBAgEsZ0JnUAIBKWhDaFcCASdmQWZNAgEmZKoBZMwBAgElbkJuSAIBIm9Db1cCASBtQW1FAgEfa6kBa8sBAgEechNyKAIBFHQJeiECARaAAUKAAU0CARGBAUOBAVcCAQ9/QX9KAgEOfa4BfdABAgENhAEThAEvAgEDhgEJjAEhAgEFd0Z3UgIBG3hHeFsCARl2RXZNAgEYdLABdNIBAgEXiQFGiQFZAgEKigFHigFbAgEIiAFFiAFWAgEHhgG8AYYB3gECAQY=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -141,19 +148,20 @@
       <sap2010:ViewStateData Id="InvokeWorkflowFile_2" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_3" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_11" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_9" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,240" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_7" sap:VirtualizedContainerService.HintSize="464,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_10" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="464,240" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="485.714285714286,1274.85714285714">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="485.714285714286,1401.14285714286">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Select_1" sap:VirtualizedContainerService.HintSize="525.714285714286,1354.85714285714" />
+      <sap2010:ViewStateData Id="Select_1" sap:VirtualizedContainerService.HintSize="525.714285714286,1481.14285714286" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

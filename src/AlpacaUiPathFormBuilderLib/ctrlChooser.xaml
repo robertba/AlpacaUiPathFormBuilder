@@ -32,6 +32,7 @@
     <x:Property Name="noneLabel" Type="InArgument(x:String)" />
     <x:Property Name="removeDefaultNone" Type="InArgument(x:Boolean)" />
     <x:Property Name="Format" Type="InArgument(x:String)" />
+    <x:Property Name="Sort" Type="InArgument(x:Object)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -87,6 +88,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Chooser" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -174,6 +176,14 @@
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Sort" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">sort</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[Sort]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap2010:WorkflowViewState.IdRef>InvokeWorkflowFile_35</sap2010:WorkflowViewState.IdRef>
+    </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Type" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="PropName">type</InArgument>
@@ -189,7 +199,7 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sads:DebugSymbol.Symbol>d1RDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXGN0cmxDaG9vc2VyLnhhbWxMAVwBZQEGAcIBAecBAQUBgQEBhwEBBAGBAgGHAgEDAaMBAakBAQJcA8EBDgIBAWYFch0CAV1zBXkdAgFXegWAAR0CAVCBAQWHAR0CAUmIAQWbAR0CASecAQWiAR0CASCjAQWpAR0CARmqAQWwAR0CARKxAQW3AR0CAQy4AQW/AR0CAQJrUWtlAgFvbUltVQIBbWlNaV0CAWtvSW9VAgFpaF5oawIBZ2pQamMCAWVsVGxpAgFjcE1wWwIBYWa/AWbmAQIBYG5AbkYCAV52QnZMAgFcd0N3VgIBWnVBdUUCAVlzogFzxAECAVh9Qn1QAgFVfkN+VgIBU3xBfEgCAVJ6pQF6xwECAVGEAUKEAUsCAU6FAUOFAVYCAUyDAUGDAUUCAUuBAaIBgQHEAQIBSo8BTo8BYgIBR5kBP5kBRwIBRZYBQpYBSwIBQ5cBSJcBWQIBQZIBRpIBVQIBP4oBRIoBUQIBPY0BQI0BSQIBO44BTY4BYAIBOZABP5ABRwIBN5EBRpEBUgIBNZUBQ5UBTwIBM4sBRIsBUAIBMZQBQpQBTAIBL5gBO5gBPwIBLYgBugGIAeMBAgEsjAFEjAFQAgEqkwE9kwFDAgEonwFCnwFQAgEloAFDoAFXAgEjngFBngFNAgEinAGrAZwBzQECASGmAUKmAU0CAR6nAUOnAVcCARylAUGlAUoCARujAa8BowHRAQIBGq0BQq0BVQIBF64BQ64BVwIBFawBQawBUgIBFKoBuAGqAdoBAgETtAFCtAFNAgERtQFDtQFXAgEPswFBswFFAgEOsQGpAbEBywECAQ26AU26AV0CAQq8AUm8AVUCAQi9AVS9AWkCAQa7AU27AVsCAQS4AbkBuAHaAQIBAw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3BDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxjdHJsQ2hvb3Nlci54YW1sUQFcAWUBBgHCAQHnAQEFAYEBAYcBAQQBgQIBhwIBAwGjAQGpAQECXgPLAQ4CAQFoBXQdAgFkdQV7HQIBXnwFggEdAgFXgwEFiQEdAgFQigEFnQEdAgEungEFpAEdAgEnpQEFqwEdAgEgrAEFsgEdAgEZswEFugEdAgESuwEFwQEdAgEMwgEFyQEdAgECbVFtZQIBdm9Jb1UCAXRrTWtdAgFycUlxVQIBcGpeamsCAW5sUGxjAgFsblRuaQIBanJNclsCAWhovwFo5gECAWdwQHBGAgFleEJ4TAIBY3lDeVYCAWF3QXdFAgFgdaIBdcQBAgFff0J/UAIBXIABQ4ABVgIBWn5BfkgCAVl8pQF8xwECAViGAUKGAUsCAVWHAUOHAVYCAVOFAUGFAUUCAVKDAaIBgwHEAQIBUZEBTpEBYgIBTpsBP5sBRwIBTJgBQpgBSwIBSpkBSJkBWQIBSJQBRpQBVQIBRowBRIwBUQIBRI8BQI8BSQIBQpABTZABYAIBQJIBP5IBRwIBPpMBRpMBUgIBPJcBQ5cBTwIBOo0BRI0BUAIBOJYBQpYBTAIBNpoBO5oBPwIBNIoBugGKAeMBAgEzjgFEjgFQAgExlQE9lQFDAgEvoQFCoQFQAgEsogFDogFXAgEqoAFBoAFNAgEpngGrAZ4BzQECASioAUKoAU0CASWpAUOpAVcCASOnAUGnAUoCASKlAa8BpQHRAQIBIa8BQq8BVQIBHrABQ7ABVwIBHK4BQa4BUgIBG6wBuAGsAdoBAgEatgFCtgFIAgEXtwFDtwFXAgEVtQFBtQFFAgEUswFxswGTAQIBE74BQr4BTQIBEb8BQ78BVwIBD70BQb0BRQIBDrsBqQG7AcsBAgENxAFNxAFdAgEKxgFJxgFVAgEIxwFUxwFpAgEGxQFNxQFbAgEEwgG5AcIB2gECAQM=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -201,16 +211,17 @@
       <sap2010:ViewStateData Id="InvokeWorkflowFile_28" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_33" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_34" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_35" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_27" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1346.28571428571">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1472.57142857143">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1426.28571428571" />
+      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1552.57142857143" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

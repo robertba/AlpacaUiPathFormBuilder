@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="BindObjects"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="commonTextBox"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -8,17 +8,16 @@
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="jobjProperties" Type="InOutArgument(njl:JObject)" />
-    <x:Property Name="jpropControl" Type="InOutArgument(njl:JProperty)" />
-    <x:Property Name="jobjFields" Type="InOutArgument(njl:JObject)" />
-    <x:Property Name="jpropControlOptions" Type="InOutArgument(njl:JProperty)" />
+    <x:Property Name="DefaultValue" Type="InArgument(x:Object)" />
+    <x:Property Name="jObjControlSchema" Type="InOutArgument(njl:JObject)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap2010:WorkflowViewState.IdRef>BindObjects_1</sap2010:WorkflowViewState.IdRef>
+  <sap2010:WorkflowViewState.IdRef>commonTextBox_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -65,35 +64,40 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="BindObjects" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <InvokeMethod DisplayName="Add control to props object" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
-      <InvokeMethod.TargetObject>
-        <InArgument x:TypeArguments="njl:JObject">[jobjProperties]</InArgument>
-      </InvokeMethod.TargetObject>
-      <InArgument x:TypeArguments="njl:JProperty">[jpropControl]</InArgument>
-    </InvokeMethod>
-    <InvokeMethod DisplayName="Add control to fields object" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
-      <InvokeMethod.TargetObject>
-        <InArgument x:TypeArguments="njl:JObject">[jobjFields]</InArgument>
-      </InvokeMethod.TargetObject>
-      <InArgument x:TypeArguments="njl:JProperty">[jpropControlOptions]</InArgument>
-    </InvokeMethod>
-    <sads:DebugSymbol.Symbol>d39DOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxDb21tb25Db250cm9sc1xCaW5kT2JqZWN0cy54YW1sB0YDVA4CAQFHBUwUAgEHTQVSFAIBAkszS0ECAQpJM0lDAgEIUTNRSAIBBU8zTz8CAQM=</sads:DebugSymbol.Symbol>
+  <Sequence DisplayName="commonTextBox" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Type" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">type</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">["object"]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlSchema]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Default" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">default</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[DefaultValue]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlSchema]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <sads:DebugSymbol.Symbol>d3pDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxDb21tb25Db250cm9sc1xPYmplY3QueGFtbAtIA1gOAgEBSQVPHQIBCVAFVh0CAQJMQkxMAgEOTUNNVgIBDEtBS0UCAQtJoQFJwwECAQpTQlNQAgEHVENUVgIBBVJBUkgCAQRQpAFQxgECAQM=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InvokeMethod_1" sap:VirtualizedContainerService.HintSize="217.714285714286,138.285714285714" />
-      <sap2010:ViewStateData Id="InvokeMethod_2" sap:VirtualizedContainerService.HintSize="217.714285714286,138.285714285714" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="239.428571428571,440">
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_1" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_2" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,336">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="BindObjects_1" sap:VirtualizedContainerService.HintSize="279.428571428571,520" />
+      <sap2010:ViewStateData Id="commonTextBox_1" sap:VirtualizedContainerService.HintSize="375.428571428571,416" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

@@ -17,8 +17,8 @@
 <div class='col-md-1'></div>
 <div class='col-md-10'>
 <div class='row'>
-<div class='col-md-4'><img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/></div>
-<div class='col-md-8'><ul class='nav nav-pills'>
+<div class='col-md-3'><img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/></div>
+<div class='col-md-9'><ul class='nav nav-pills'>
   <li class='active btn-lg'><a data-toggle='pill' href='#form0'>Our Form Title</a></li>
 </ul></div>
 </div>
@@ -41,20 +41,101 @@ $("#form0").alpaca(
         "title": "ctrl-705548"
       },
       "ctrl-533425": {
-        "type": "string",
-        "minLength": 0,
-        "maxLength": 40,
-        "title": "ctrl-533425"
+        "type": "object",
+        "title": "caption"
+      },
+      "array test": {
+        "type": "array",
+        "default": [
+          {
+            "array_field_1": "jack1",
+            "array_field_2": "jack2"
+          },
+          {
+            "array_field_1": "jack3",
+            "array_field_2": "jack4"
+          }
+        ],
+        "minitems": 0,
+        "maxitems": 0,
+        "uniqueItems": false,
+        "animate": false,
+        "collapsed": false,
+        "collapsible": false,
+        "title": "array test",
+        "items": {
+          "type": "object",
+          "properties": {
+            "array_field_1": {
+              "type": "string",
+              "default": "heythere'",
+              "minLength": 0,
+              "maxLength": 40,
+              "title": "array_field_1"
+            },
+            "array_field_2": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 40,
+              "title": "array_field_2"
+            }
+          }
+        }
+      },
+      "myname": {
+        "type": "array",
+        "default": [
+          {
+            "array_field_1": "jack1",
+            "array_field_2": "jack2"
+          },
+          {
+            "array_field_1": "jack3",
+            "array_field_2": "jack4"
+          }
+        ],
+        "minitems": 0,
+        "maxitems": 0,
+        "uniqueItems": false,
+        "animate": false,
+        "collapsed": false,
+        "collapsible": false,
+        "title": "my name",
+        "items": {
+          "type": "object",
+          "properties": {
+            "array_field_1": {
+              "type": "string",
+              "default": "heythere'",
+              "minLength": 0,
+              "maxLength": 40,
+              "title": "array_field_1"
+            },
+            "array_field_2": {
+              "type": "string",
+              "minLength": 0,
+              "maxLength": 40,
+              "title": "array_field_2"
+            }
+          }
+        }
       },
       "ctrl-579520": {
         "type": "string",
         "minLength": 0,
         "maxLength": 40,
         "title": "ctrl-579520"
+      },
+      "ctrl-289564": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 40,
+        "title": "ctrl-289564"
       }
     }
   },
   "options": {
+    "hideInitValidationError": true,
     "fields": {
       "ctrl-705548": {
         "rows": 5,
@@ -62,13 +143,18 @@ $("#form0").alpaca(
         "type": "summernote",
         "wordlimit": -1
       },
-      "ctrl-533425": {
+      "ctrl-533425": {},
+      "array test": {},
+      "myname": {
+        "type": "table"
+      },
+      "ctrl-579520": {
         "rows": 5,
         "cols": 40,
         "type": "ckeditor",
         "wordlimit": -1
       },
-      "ctrl-579520": {
+      "ctrl-289564": {
         "type": "file"
       }
     },
@@ -98,7 +184,10 @@ $("#form0").alpaca(
       "bindings": {
         "ctrl-705548": "column-1",
         "ctrl-533425": "column-1",
-        "ctrl-579520": "column-1"
+        "array test": "column-1",
+        "myname": "column-1",
+        "ctrl-579520": "column-1",
+        "ctrl-289564": "column-1"
       },
       "template": "<div class='row'><div class='col-md-6' id='column-1'></div><div class='col-md-6' id='column-2'></div></div>"
     },

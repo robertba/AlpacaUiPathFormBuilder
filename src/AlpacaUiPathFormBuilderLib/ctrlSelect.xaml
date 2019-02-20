@@ -33,6 +33,7 @@
     <x:Property Name="IsMultiple" Type="InArgument(x:Boolean)" />
     <x:Property Name="removeDefaultNone" Type="InArgument(x:Boolean)" />
     <x:Property Name="Format" Type="InArgument(x:String)" />
+    <x:Property Name="Sort" Type="InArgument(x:Object)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -88,6 +89,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Select" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -133,6 +135,7 @@
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsMultiple">[IsMultiple]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="NoneLabel">[noneLabel]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="removeDefaultNone">[removeDefaultNone]</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="Sort">[Sort]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Type" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
@@ -170,7 +173,7 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sads:DebugSymbol.Symbol>d1NDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXGN0cmxTZWxlY3QueGFtbEABXAFlAQgBwgEB5wEBBwHMAgHSAgEGAaMCAakCAQUBgQEBhwEBBAGBAgGHAgEDAaMBAakBAQJdA64BDgIBAWcFcx0CAU50BX0KAgFGfgWJAR0CATSKAQWQAR0CAS6RAQWkAR0CAQylAQWsAR0CAQJsUWxlAgFgbkluVQIBXmpNal0CAVxwSXBVAgFaaV5pawIBWGtQa2MCAVZtVG1pAgFUcU1xWwIBUme/AWfmAQIBUW9Ab0YCAU90E3QoAgFHdgl7IQIBSYEBRYEBUwIBRIMBUYMBZQIBQoIBQoIBSwIBQIcBS4cBXgIBPoYBQoYBTQIBPIUBRIUBUAIBOoQBR4QBVQIBOIABUIABYwIBNn60AX7QAQIBNY0BQo0BTAIBM44BQ44BVwIBMYwBQYwBRQIBMIoBqQGKAcsBAgEvmAFOmAFiAgEsogE/ogFHAgEqnwFCnwFLAgEooAFIoAFZAgEmmwFGmwFVAgEkkwFEkwFRAgEilgFAlgFJAgEglwFNlwFgAgEemQE/mQFHAgEcmgFGmgFSAgEangFDngFPAgEYlAFElAFQAgEWnQFCnQFMAgEUoQE7oQE/AgESkQG6AZEB4wECARGVAUSVAVACAQ+cAT2cAUMCAQ2nAU2nAV0CAQqpAUmpAVUCAQiqAVSqAWkCAQaoAU2oAVsCAQSlAbkBpQHaAQIBA3hleHICAUx5RXlLAgFLdsUBdu4BAgFK</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d29DOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxjdHJsU2VsZWN0LnhhbWxBAVwBZQEIAcIBAecBAQcBzAIB0gIBBgGjAgGpAgEFAYEBAYcBAQQBgQIBhwIBAwGjAQGpAQECXwOxAQ4CAQFpBXUdAgFQdgV/CgIBSIABBYwBHQIBNI0BBZMBHQIBLpQBBacBHQIBDKgBBa8BHQIBAm5RbmUCAWJwSXBVAgFgbE1sXQIBXnJJclUCAVxrXmtrAgFabVBtYwIBWG9Ub2kCAVZzTXNbAgFUab8BaeYBAgFTcUBxRgIBUXYTdigCAUl4CX0hAgFLgwFFgwFTAgFGhQFRhQFlAgFEhAFChAFLAgFCiQFLiQFeAgFAigE9igFDAgE+iAFCiAFNAgE8hwFEhwFQAgE6hgFHhgFVAgE4ggFQggFjAgE2gAG0AYAB0AECATWQAUKQAUwCATORAUORAVcCATGPAUGPAUUCATCNAakBjQHLAQIBL5sBTpsBYgIBLKUBP6UBRwIBKqIBQqIBSwIBKKMBSKMBWQIBJp4BRp4BVQIBJJYBRJYBUQIBIpkBQJkBSQIBIJoBTZoBYAIBHpwBP5wBRwIBHJ0BRp0BUgIBGqEBQ6EBTwIBGJcBRJcBUAIBFqABQqABTAIBFKQBO6QBPwIBEpQBugGUAeMBAgERmAFEmAFQAgEPnwE9nwFDAgENqgFNqgFdAgEKrAFJrAFVAgEIrQFUrQFpAgEGqwFNqwFbAgEEqAG5AagB2gECAQN6ZXpyAgFOe0V7SwIBTXjFAXjuAQIBTA==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

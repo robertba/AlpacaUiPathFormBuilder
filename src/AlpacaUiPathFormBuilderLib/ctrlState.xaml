@@ -36,6 +36,7 @@
     <x:Property Name="Format" Type="InArgument(x:String)" />
     <x:Property Name="IncludeStates" Type="InArgument(x:Boolean)" />
     <x:Property Name="IncludeTerritories" Type="InArgument(x:Boolean)" />
+    <x:Property Name="Sort" Type="InArgument(x:Object)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -91,6 +92,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Select" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -142,6 +144,13 @@
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Sort" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="PropName">sort</InArgument>
+        <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[Sort]</InArgument>
+        <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlOptions]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Option Type" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="PropName">type</InArgument>
@@ -177,7 +186,7 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sads:DebugSymbol.Symbol>d1JDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXGN0cmxTdGF0ZS54YW1sRwGRAwGWAwELAVwBZQEKAcIBAecBAQkBugMBvwMBCAHsAgHyAgEHAcMCAckCAQYBgQEBhwEBBQGBAgGHAgEEAaECAacCAQMBowEBqQEBAmADtQEOAgEBagV2HQIBVHcFggEdAgFCgwEFiQEdAgE7igEFkAEdAgE0kQEFlwEdAgEumAEFqwEdAgEMrAEFswEdAgECb1FvZQIBZnFJcVUCAWRtTW1dAgFic0lzVQIBYGxebGsCAV5uUG5jAgFccFRwaQIBWnRNdFsCAVhqvwFq5gECAVdyQHJGAgFVekV6UwIBUnxRfGUCAVB7QntLAgFOgAFLgAFeAgFMf0J/TQIBSn5EflACAUh9R31VAgFGeVB5YwIBRHe0AXfQAQIBQ4YBQoYBUQIBQIcBQ4cBVwIBPoUBQYUBTgIBPYMBrAGDAc4BAgE8jQFCjQFWAgE5jgFDjgFXAgE3jAFBjAFTAgE2igGxAYoB0wECATWUAUKUAUsCATOVAUOVAVcCATGTAUGTAUUCATCRAakBkQHLAQIBL58BTp8BYgIBLKkBP6kBRwIBKqYBQqYBSwIBKKcBSKcBWQIBJqIBRqIBVQIBJJoBRJoBUQIBIp0BQJ0BSQIBIJ4BTZ4BYAIBHqABP6ABRwIBHKEBRqEBUgIBGqUBQ6UBTwIBGJsBRJsBUAIBFqQBQqQBTAIBFKgBO6gBPwIBEpgBugGYAeMBAgERnAFEnAFQAgEPowE9owFDAgENrgFNrgFdAgEKsAFJsAFVAgEIsQFUsQFpAgEGrwFNrwFbAgEErAG5AawB2gECAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d25DOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxjdHJsU3RhdGUueGFtbEwBkQMBlgMBCwFcAWUBCgHCAQHnAQEJAboDAb8DAQgB7AIB8gIBBwHDAgHJAgEGAYEBAYcBAQUBgQIBhwIBBAGhAgGnAgEDAaMBAakBAQJiA74BDgIBAWwFeB0CAVt5BYQBHQIBSYUBBYsBHQIBQowBBZIBHQIBO5MBBZkBHQIBNJoBBaABHQIBLqEBBbQBHQIBDLUBBbwBHQIBAnFRcWUCAW1zSXNVAgFrb01vXQIBaXVJdVUCAWduXm5rAgFlcFBwYwIBY3JUcmkCAWF2TXZbAgFfbL8BbOYBAgFedEB0RgIBXHxFfFMCAVl+UX5lAgFXfUJ9SwIBVYIBS4IBXgIBU4EBQoEBTQIBUYABRIABUAIBT39Hf1UCAU17UHtjAgFLebQBedABAgFKiAFCiAFRAgFHiQFDiQFXAgFFhwFBhwFOAgFEhQGsAYUBzgECAUOPAUKPAVYCAUCQAUOQAVcCAT6OAUGOAVMCAT2MAbEBjAHTAQIBPJYBQpYBSAIBOZcBQ5cBVwIBN5UBQZUBRQIBNpMBqQGTAcsBAgE1nQFCnQFLAgEzngFDngFXAgExnAFBnAFFAgEwmgGpAZoBywECAS+oAU6oAWICASyyAT+yAUcCASqvAUKvAUsCASiwAUiwAVkCASarAUarAVUCASSjAUSjAVECASKmAUCmAUkCASCnAU2nAWACAR6pAT+pAUcCARyqAUaqAVICARquAUOuAU8CARikAUSkAVACARatAUKtAUwCARSxATuxAT8CARKhAboBoQHjAQIBEaUBRKUBUAIBD6wBPawBQwIBDbcBTbcBXQIBCrkBSbkBVQIBCLoBVLoBaQIBBrgBTbgBWwIBBLUBuQG1AdoBAgED</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -185,17 +194,18 @@
       <sap2010:ViewStateData Id="InvokeWorkflowFile_36" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_39" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_40" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_41" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_37" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_38" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,967.428571428571">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1093.71428571429">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1047.42857142857" />
+      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1173.71428571429" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

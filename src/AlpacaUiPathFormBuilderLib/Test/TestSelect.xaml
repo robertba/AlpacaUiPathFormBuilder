@@ -195,11 +195,12 @@
         <InArgument x:TypeArguments="x:String" x:Key="noneLabel">Zero</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="removeDefaultNone">True</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Format" />
+        <InArgument x:TypeArguments="x:Object" x:Key="Sort" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckBox workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ctrlCheckBox.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue" />
         <InArgument x:TypeArguments="x:String" x:Key="Caption">hello</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Name">checkone</InArgument>
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
@@ -207,8 +208,8 @@
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
         <InArgument x:TypeArguments="x:String" x:Key="Description" />
-        <InArgument x:TypeArguments="s:String[]" x:Key="arrEnum">[{"one", "two", "three"}]</InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="optionLabels">[{"label1", "label2", "label3"}]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="arrEnum">[{"one", "two", "three", "four"}]</InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="optionLabels">[{"label1", "label2", "label3", "label21"}]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="Helper">helper2</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
         <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
@@ -216,6 +217,7 @@
         <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
         <InArgument x:TypeArguments="x:String" x:Key="id" />
         <InArgument x:TypeArguments="x:String" x:Key="Format" />
+        <InArgument x:TypeArguments="x:Object" x:Key="Sort">[false]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlCheckBox workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="ctrlCheckBox.xaml">
@@ -261,7 +263,7 @@
     </ui:InvokeWorkflowFile>
     <ui:CustomInput DisplayName="Custom Input" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="testselect.html" />
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[sResult]" TopMost="True" />
-    <sads:DebugSymbol.Symbol>d1hDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXFRlc3RcVGVzdFNlbGVjdC54YW1sMEEDiQIOAgEBRwVPHQIBNlAFaB0CATJpBYEBHQIBLoIBBZkBHQIBJpoBBbABHQIBIrEBBccBHQIBHMgBBdwBHQIBEt0BBfEBHQIBDvIBBYUCHQIBCYYCBYYCiwECAQWHAgWHArcBAgECTUJNUAIBO0pJSk8CATpJX0lsAgE4R7YBR8YBAgE3VWFVbgIBNFC3AVDHAQIBM25hbm4CATBpuQFpywECAS+MAUKMAWMCAS2HAWGHAW4CASuVAUSVAUgCASqCAbgBggHJAQIBKYoBRIoBSQIBKIYBPYYBRQIBJ58BYZ8BbgIBJJoBuQGaAcsBAgEjwwFCwwFGAgEhxAFLxAFPAgEgtgFhtgFuAgEesQG3AbEBxwECAR3OAUbOAU4CARvSAULSAVsCARrLAUDLAUUCARnUAT/UAUYCARjNAWHNAW4CARbTAUfTAWcCARXIAbUByAHIAQIBFMwBPcwBRQIBE+IBYeIBbgIBEN0BuQHdAcwBAgEP9QFE9QFTAgEN8gG3AfIByAECAQyDAmGDAnACAQqGAneGAogBAgEIhgJnhgJyAgEGhwKaAYcCpQECAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3RDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxUZXN0XFRlc3RTZWxlY3QueGFtbDFBA4sCDgIBAUcFTx0CATdQBWgdAgEzaQWBAR0CAS+CAQWZAR0CASeaAQWwAR0CASOxAQXIAR0CAR3JAQXeAR0CARLfAQXzAR0CAQ70AQWHAh0CAQmIAgWIAosBAgEFiQIFiQK3AQIBAk1CTVACATxKSUpPAgE7SV9JbAIBOUe2AUfGAQIBOFVhVW4CATVQtwFQxwECATRuYW5uAgExabkBacsBAgEwjAFCjAFjAgEuhwFhhwFuAgEslQFElQFIAgErggG4AYIByQECASqKAUSKAUkCASmGAT2GAUUCASifAWGfAW4CASWaAbkBmgHLAQIBJMMBQsMBRgIBIsQBS8QBTwIBIbYBYbYBbgIBH7EBtwGxAccBAgEezwFGzwFOAgEc0wFC0wFjAgEbzAFAzAFFAgEa1QE/1QFGAgEZ3AE93AFEAgEYzgFhzgFuAgEW1AFH1AFyAgEVyQG1AckByAECARTNAT3NAUUCARPkAWHkAW4CARDfAbkB3wHMAQIBD/cBRPcBUwIBDfQBtwH0AcgBAgEMhQJhhQJwAgEKiAJ3iAKIAQIBCIgCZ4gCcgIBBokCmgGJAqUBAgED</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -274,16 +276,16 @@
       <sap2010:ViewStateData Id="InvokeWorkflowFile_4" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_8" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_2" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="CustomInput_1" sap:VirtualizedContainerService.HintSize="313.714285714286,88" />
+      <sap2010:ViewStateData Id="CustomInput_1" sap:VirtualizedContainerService.HintSize="313.714285714286,90.2857142857143" />
       <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="313.714285714286,58.2857142857143" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1446.28571428571">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1448.57142857143">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Test_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1526.28571428571" />
+      <sap2010:ViewStateData Id="Test_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1528.57142857143" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
