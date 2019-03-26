@@ -67,7 +67,6 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="InitViewObjects" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -117,7 +116,7 @@
       </InvokeMethod.TargetObject>
       <InArgument x:TypeArguments="njl:JProperty">[jpropBindings]</InArgument>
     </InvokeMethod>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddPropertyToJObject workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddPropertyToJObject workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="AddPropertyToJObject.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="PropName">template</InArgument>
         <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[LayoutTemplate]</InArgument>
@@ -138,7 +137,7 @@
       </InvokeMethod.TargetObject>
       <InArgument x:TypeArguments="njl:JProperty">[jpropLayout]</InArgument>
     </InvokeMethod>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddPropertyToJObject workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AddPropertyToJObject workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="AddPropertyToJObject.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="PropName">parent</InArgument>
         <InArgument x:TypeArguments="x:Object" x:Key="PropValue">["bootstrap-edit"]</InArgument>
@@ -159,29 +158,29 @@
       </InvokeMethod.TargetObject>
       <InArgument x:TypeArguments="njl:JProperty">[jpropView]</InArgument>
     </InvokeMethod>
-    <sads:DebugSymbol.Symbol>d1dDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEZvcm1CdWlsZGVyTGlicmFyeVxDb21tb25cSW5pdFZpZXdPYmplY3RzLnhhbWwnAW8B/wEBAkkDowEOAgEBUgVZDgIBMloFYQ4CAS5iBWkOAgEqagVxDgIBJnIFdxQCASF4BX4dAgEafwWGAQ4CARaHAQWMARQCARGNAQWTAR0CAQuUAQWbAQ4CAQecAQWhARQCAQJXM1dAAgE1VDRUQgIBM18zX0ACATFcNFxAAgEvZzNnQAIBLWQ0ZD4CAStvNW9eAgEpbDZsRQIBJ3YzdkICASR0M3Q/AgEie0J7UgIBH3xDfE8CAR16QXpJAgEceMEBeOMBAgEbhAE1hAFaAgEZgQE2gQFDAgEXiwEziwFAAgEUiQEziQE9AgESkAFCkAFUAgEQkQFDkQFNAgEOjwFBjwFHAgENjQHBAY0B4wECAQyZATWZAVYCAQqWATaWAUECAQigATOgAT4CAQWeATOeAUACAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3hDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY0ZsYXRcQWxwYWNhVWlQYXRoRm9ybUJ1aWxkZXJMaWJcSW5pdFZpZXdPYmplY3RzLnhhbWwnAW8B/wEBAkgDogEOAgEBUQVYDgIBMlkFYA4CAS5hBWgOAgEqaQVwDgIBJnEFdhQCASF3BX0dAgEafgWFAQ4CARaGAQWLARQCARGMAQWSAR0CAQuTAQWaAQ4CAQebAQWgARQCAQJWM1ZAAgE1UzRTQgIBM14zXkACATFbNFtAAgEvZjNmQAIBLWM0Yz4CAStuNW5eAgEpazZrRQIBJ3UzdUICASRzM3M/AgEiekJ6UgIBH3tDe08CAR15QXlJAgEcd8EBd9wBAgEbgwE1gwFaAgEZgAE2gAFDAgEXigEzigFAAgEUiAEziAE9AgESjwFCjwFUAgEQkAFDkAFNAgEOjgFBjgFHAgENjAHBAYwB3AECAQyYATWYAVYCAQqVATaVAUECAQifATOfAT4CAQWdATOdAUACAQM=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="InvokeMethod_4" sap:VirtualizedContainerService.HintSize="313.714285714286,138.285714285714" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_4" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="InvokeMethod_3" sap:VirtualizedContainerService.HintSize="313.714285714286,138.285714285714" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_3" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="InvokeMethod_2" sap:VirtualizedContainerService.HintSize="313.714285714286,138.285714285714" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1477.71428571429">
+      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="InvokeMethod_4" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_4" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="InvokeMethod_3" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_3" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="InvokeMethod_2" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,1460">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="SetupSchemaObjects_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1557.71428571429" />
+      <sap2010:ViewStateData Id="SetupSchemaObjects_1" sap:VirtualizedContainerService.HintSize="376,1540" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

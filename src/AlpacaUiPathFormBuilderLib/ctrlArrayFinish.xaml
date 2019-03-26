@@ -113,7 +113,7 @@
       <Variable x:TypeArguments="njl:JObject" Name="JSONSchema" />
       <Variable x:TypeArguments="x:String" Name="sItemJSON" />
     </Sequence.Variables>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitializeObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="CommonControls\InitializeObjects.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitializeObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="InitializeObjects.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InArgument>
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjProperties">[jobjProperties]</InOutArgument>
@@ -126,7 +126,7 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControl">[jpropControl]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Array workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="CommonControls\Array.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Array workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Array.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue">[DefaultValue]</InArgument>
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="jObjControlSchema">[jobjControlSchema]</InOutArgument>
@@ -140,7 +140,7 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="controlPayload">[controlPayload]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke commonGlobal workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="CommonControls\SetCommonProperties.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke commonGlobal workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="SetCommonProperties.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="Description">[Description]</InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly">[IsReadOnly]</InArgument>
@@ -176,14 +176,14 @@
         <InArgument x:TypeArguments="x:String">[JsonPayload.Item("schema").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Items" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Common\AddPropertyToJObject.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Items" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="AddPropertyToJObject.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="PropName">items</InArgument>
         <InArgument x:TypeArguments="x:Object" x:Key="PropValue">[JsonPayload.Item("schema")]</InArgument>
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlSchema]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BindObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="CommonControls\BindObjects.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke BindObjects workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="BindObjects.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="jobjProperties">[jobjProperties]</InOutArgument>
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControl">[jpropControl]</InOutArgument>
@@ -191,25 +191,25 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sads:DebugSymbol.Symbol>d3RDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxjdHJsQXJyYXlGaW5pc2gueGFtbEABXAFlAQYsByw2AQUBgQEBhwEBBAHDAQHJAQEDAaMBAakBAQJnA8MBDgIBAXQFgAEdAgFSgQEFjgEdAgE8jwEFogEdAgEaowEFqgEOAgEWqwEFsgEOAgESswEFuQEdAgEMugEFwQEdAgECeVF5ZQIBZHtJe1UCAWJ3TXddAgFgfUl9VQIBXnZedmsCAVx4UHhjAgFaelR6aQIBWH5NflsCAVZ0vwF05gECAVV8QHxGAgFTgwFFgwFTAgFQiAFHiAFXAgFOhwFFhwFSAgFMjAFhjAFxAgFKigFDigFOAgFIhAFQhAFjAgFGiwFFiwFSAgFEhgFAhgFKAgFChQFAhQFKAgFAiQFBiQFKAgE+gQGzAYEBzgECAT2WAU6WAWICATqgAT+gAUcCATidAUKdAUsCATaeAUieAVkCATSZAUaZAVUCATKRAUSRAVECATCUAUCUAUkCAS6VAU2VAWACASyXAT+XAUcCASqYAUaYAVICASicAUOcAU8CASaSAUSSAVACASSbAUKbAUwCASKfATufAT8CASCPAboBjwHjAQIBH5MBRJMBUAIBHZoBPZoBQwIBG6gBM6gBZAIBGaUBNKUBQQIBF7ABMLABVQIBFa0BMa0BPAIBE7YBQrYBXgIBEbcBQ7cBVgIBD7UBQbUBRgIBDrMBowGzAcUBAgENvAFNvAFdAgEKvgFJvgFVAgEIvwFUvwFpAgEGvQFNvQFbAgEEugG5AboB2gECAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3hDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY0ZsYXRcQWxwYWNhVWlQYXRoRm9ybUJ1aWxkZXJMaWJcY3RybEFycmF5RmluaXNoLnhhbWxAAVwBZQEGLAcsNgEFAYEBAYcBAQQBwwEByQEBAwGjAQGpAQECZwPDAQ4CAQF0BYABHQIBUoEBBY4BHQIBPI8BBaIBHQIBGqMBBaoBDgIBFqsBBbIBDgIBErMBBbkBHQIBDLoBBcEBHQIBAnlReWUCAWR7SXtVAgFid013XQIBYH1JfVUCAV52XnZrAgFceFB4YwIBWnpUemkCAVh+TX5bAgFWdL8BdNcBAgFVfEB8RgIBU4MBRYMBUwIBUIgBR4gBVwIBTocBRYcBUgIBTIwBYYwBcQIBSooBQ4oBTgIBSIQBUIQBYwIBRosBRYsBUgIBRIYBQIYBSgIBQoUBQIUBSgIBQIkBQYkBSgIBPoEBswGBAb8BAgE9lgFOlgFiAgE6oAE/oAFHAgE4nQFCnQFLAgE2ngFIngFZAgE0mQFGmQFVAgEykQFEkQFRAgEwlAFAlAFJAgEulQFNlQFgAgEslwE/lwFHAgEqmAFGmAFSAgEonAFDnAFPAgEmkgFEkgFQAgEkmwFCmwFMAgEinwE7nwE/AgEgjwG6AY8B1AECAR+TAUSTAVACAR2aAT2aAUMCARuoATOoAWQCARmlATSlAUECARewATCwAVUCARWtATGtATwCARO2AUK2AV4CARG3AUO3AVYCAQ+1AUG1AUYCAQ6zAaMBswG+AQIBDbwBTbwBXQIBCr4BSb4BVQIBCL8BVL8BaQIBBr0BTb0BWwIBBLoBuQG6AcsBAgED</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_29" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_33" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_36" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_30" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,917.142857142857">
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_29" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_33" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_36" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_30" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,919">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="375.428571428571,997.142857142857" />
+      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="376,999" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

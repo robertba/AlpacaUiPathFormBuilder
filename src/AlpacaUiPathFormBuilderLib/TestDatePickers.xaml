@@ -89,7 +89,6 @@
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
         <InArgument x:TypeArguments="x:String" x:Key="Description" />
         <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
-        <InArgument x:TypeArguments="x:Int32" x:Key="Rows" />
         <InArgument x:TypeArguments="x:String" x:Key="Helper" />
         <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
         <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
@@ -103,7 +102,7 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlDate workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="ctrlDate.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue" />
         <InArgument x:TypeArguments="x:String" x:Key="Caption" />
         <InArgument x:TypeArguments="x:String" x:Key="Name">date1</InArgument>
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
@@ -115,7 +114,6 @@
         <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
         <InArgument x:TypeArguments="x:String" x:Key="Description" />
         <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
-        <InArgument x:TypeArguments="x:Int32" x:Key="Rows" />
         <InArgument x:TypeArguments="x:String" x:Key="Helper" />
         <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
         <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
@@ -149,7 +147,7 @@
     </ui:InvokeWorkflowFile>
     <ui:CustomInput DisplayName="Custom Input" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="datepickers.html" />
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[sResult]" TopMost="True" />
-    <sads:DebugSymbol.Symbol>d11DOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXFRlc3RcVGVzdERhdGVQaWNrZXJzLnhhbWwcQAOZAQ4CAQFGBU0dAgEdTgVnHQIBFmgFgQEdAgEOggEFlQEdAgEJlgEFlgGMAQIBBZcBBZcBtwECAQJIQkhQAgEiSUlJTwIBIUtfS2wCAR9GtgFGxgECAR5lRWVaAgEcU2FTbgIBGmNDY1gCARlOugFOzQECARhSPVJGAgEXf0V/TQIBFW1hbW4CARN9Q31LAgESfkV+SQIBEWi2AWjFAQIBEGw9bEICAQ+FAUSFAVQCAQ2CAbcBggHIAQIBDJMBYZMBcAIBCpYBd5YBiQECAQiWAWeWAXICAQaXAZoBlwGlAQIBAw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3RDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxUZXN0RGF0ZVBpY2tlcnMueGFtbBxAA5cBDgIBAUYFTR0CAR1OBWYdAgEWZwV/HQIBDoABBZMBHQIBCZQBBZQBjAECAQWVAQWVAbcBAgECSEJIUAIBIklJSU8CASFLX0tsAgEfRrYBRsYBAgEeZEVkWgIBHFNhU24CARpiQ2JYAgEZTroBTs0BAgEYUj1SRgIBF31FfU0CARVsYWxuAgETe0N7SwIBEnxFfEkCARFntgFnxQECARBrPWtCAgEPgwFEgwFUAgENgAG3AYAByAECAQyRAWGRAXACAQqUAXeUAYkBAgEIlAFnlAFyAgEGlQGaAZUBpQECAQM=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>

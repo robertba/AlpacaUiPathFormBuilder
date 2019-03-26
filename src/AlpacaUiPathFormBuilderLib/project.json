@@ -9,7 +9,7 @@
   },
   "schemaVersion": "3.2",
   "studioVersion": "18.3.2.0",
-  "projectVersion": "1.0.0.73",
+  "projectVersion": "1.0.0.80",
   "runtimeOptions": {
     "autoDispose": false,
     "excludedLoggedData": [
@@ -20,7 +20,30 @@
   "projectType": "Library",
   "libraryOptions": {
     "includeOriginalXaml": false,
-    "privateWorkflows": []
+    "privateWorkflows": [
+      "AddPropertyToJObject.xaml",
+      "Array.xaml",
+      "BindObjects.xaml",
+      "Date.xaml",
+      "FormButton.xaml",
+      "InitializeObjects.xaml",
+      "InitOptionsObjects.xaml",
+      "InitSchemaObjects.xaml",
+      "InitViewObjects.xaml",
+      "Object.xaml",
+      "Select.xaml",
+      "SetCommonProperties.xaml",
+      "StoreCtrlTypeLoaded.xaml",
+      "TextArea.xaml",
+      "TextField.xaml",
+      "TestColorPickers.xaml",
+      "TestDatePickers.xaml",
+      "TestMisc.xaml",
+      "TestMultipleForms.xaml",
+      "TestSelect.xaml",
+      "TestTextFields.xaml",
+      "TestVisuallyBuiltForm.xaml"
+    ]
   },
   "arguments": {
     "input": [

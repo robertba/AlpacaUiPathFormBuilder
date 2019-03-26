@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="RenderForm" this:RenderForm.SubmitClick="[&quot;function() {&quot; + Environment.NewLine +&#xA;&quot;                      this.refreshValidationState(true);&quot; + Environment.NewLine +&#xA;&quot;                      if (this.isValid(true)) {&quot; + Environment.NewLine +&#xA;&quot;                          var value = this.getValue();&quot; + Environment.NewLine +&#xA;&quot;       if (typeof (window.external) !== 'undefined' &amp;&amp; ('setResult' in window.external)) {&quot; + Environment.NewLine +&#xA;&quot;      window.external.setResult(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;       else {&quot; + Environment.NewLine +&#xA;&quot;        alert(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;                       }&quot; + Environment.NewLine +&#xA;&quot;                  }&quot;]" this:RenderForm.FooterHTML="&lt;h3&gt;This form is powered by &lt;a href='http://www.uipath.com' target='_blank'&gt;Uipath&lt;/a&gt;&lt;/h3&gt;" this:RenderForm.IncludeJQuery="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&quot; integrity=&quot;&quot;sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeHandlebars="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeBootstrap="[&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; href=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&quot; integrity=&quot;&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;script src=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&quot; integrity=&quot;&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeAlpaca="[&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeJQueryUI="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.min.js&quot;&quot; integrity=&quot;&quot;sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeDateTimePicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeCurrency="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-price-format/2.2.0/jquery.priceformat.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeColorPicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeColor="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeSelect="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeCKEditor="[&quot;&lt;script src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js' type='text/javascript'&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeSummerNoteEditor="[&quot;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.min.js' type='text/javascript'&gt;&lt;/script&gt;&quot;  + Environment.NewLine +&#xD;&#xA;&quot;&lt;link rel='stylesheet' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css'/&gt;&quot; + Environment.NewLine]" this:RenderForm.LogoHTML="&lt;img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/&gt;"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="RenderForm" this:RenderForm.SubmitClick="[&quot;function() {&quot; + Environment.NewLine +&#xA;&quot;                      this.refreshValidationState(true);&quot; + Environment.NewLine +&#xA;&quot;                      if (this.isValid(true)) {&quot; + Environment.NewLine +&#xA;&quot;                          var value = this.getValue();&quot; + Environment.NewLine +&#xA;&quot;       if (typeof (window.external) !== 'undefined' &amp;&amp; ('setResult' in window.external)) {&quot; + Environment.NewLine +&#xA;&quot;      window.external.setResult(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;       else {&quot; + Environment.NewLine +&#xA;&quot;        alert(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;                       }&quot; + Environment.NewLine +&#xA;&quot;                  }&quot;]" this:RenderForm.FooterHTML="&lt;h3&gt;This form is powered by &lt;a href='http://www.uipath.com' target='_blank'&gt;Uipath&lt;/a&gt;&lt;/h3&gt;" this:RenderForm.IncludeJQuery="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&quot; integrity=&quot;&quot;sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeHandlebars="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeBootstrap="[&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; href=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&quot; integrity=&quot;&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;script src=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&quot; integrity=&quot;&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeAlpaca="[&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeJQueryUI="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.min.js&quot;&quot; integrity=&quot;&quot;sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeDateTimePicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeCurrency="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-price-format/2.2.0/jquery.priceformat.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeColorPicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeColor="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeSelect="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeCKEditor="[&quot;&lt;script src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js' type='text/javascript'&gt;&lt;/script&gt;&quot; + Environment.NewLine]" this:RenderForm.IncludeSummerNoteEditor="[&quot;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.min.js' type='text/javascript'&gt;&lt;/script&gt;&quot;  + Environment.NewLine +&#xA;&quot;&lt;link rel='stylesheet' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css'/&gt;&quot; + Environment.NewLine]" this:RenderForm.LogoHTML="&lt;img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/&gt;" this:RenderForm.displayTitleHTML="True"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -29,6 +29,7 @@
     <x:Property Name="IncludeSummerNoteEditor" Type="InArgument(x:String)" />
     <x:Property Name="FormPayloads" Type="InArgument(scg:Dictionary(x:String, x:Object)[])" />
     <x:Property Name="LogoHTML" Type="InArgument(x:String)" />
+    <x:Property Name="displayTitleHTML" Type="InArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -95,6 +96,7 @@
       <Variable x:TypeArguments="njl:JObject" Name="JSONPayload" />
       <Variable x:TypeArguments="x:Int32" Name="nIndex" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="FormPayload" />
+      <Variable x:TypeArguments="x:String" Name="sTitle" />
     </Sequence.Variables>
     <Assign sap2010:WorkflowViewState.IdRef="Assign_42">
       <Assign.To>
@@ -102,6 +104,7 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String" xml:space="preserve">["&lt;!DOCTYPE html&gt;" + Environment.NewLine +
+"&lt;!-- saved from url=(0014)about:internet --&gt;" + Environment.NewLine +
 "&lt;html&gt;" + Environment.NewLine + 
 "&lt;head&gt;" + Environment.NewLine +
 "&lt;meta http-equiv=""X-UA-Compatible"" content=""IE=Edge,chrome=1""&gt;" + Environment.NewLine +
@@ -328,12 +331,13 @@ IncludeAlpaca]</InArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp;  "&lt;body&gt;" + Environment.NewLine +
+"&lt;div class='wrapper container-fluid'&gt;" + Environment.NewLine +
 "&lt;div class='row'&gt;" + Environment.NewLine +
 "&lt;div class='col-md-1'&gt;&lt;/div&gt;" + Environment.NewLine +
 "&lt;div class='col-md-10'&gt;" + Environment.NewLine +
 "&lt;div class='row'&gt;" + Environment.NewLine +
-"&lt;div class='col-md-3'&gt;" + LogoHTML + "&lt;/div&gt;" + Environment.NewLine +
-"&lt;div class='col-md-9'&gt;&lt;ul class='nav nav-pills'&gt;" + Environment.NewLine]</InArgument>
+"&lt;div class='col-md-2'&gt;" + LogoHTML + "&lt;/div&gt;" + Environment.NewLine +
+"&lt;div class='col-md-10'&gt;&lt;ul class='nav nav-pills'&gt;" + Environment.NewLine]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="[nIndex]" DisplayName="For Each" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[FormPayloads]">
@@ -427,13 +431,37 @@ IncludeAlpaca]</InArgument>
                 </Assign>
               </If.Then>
             </If>
+            <If Condition="[displayTitleHTML]" sap2010:WorkflowViewState.IdRef="If_20">
+              <If.Then>
+                <Assign sap2010:WorkflowViewState.IdRef="Assign_55">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[sTitle]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["&lt;h2&gt;" + FormPayload("formtitle").ToString + "&lt;/h2&gt;" + Environment.NewLine]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Then>
+              <If.Else>
+                <Assign sap2010:WorkflowViewState.IdRef="Assign_56">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[sTitle]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Else>
+            </If>
             <Assign sap2010:WorkflowViewState.IdRef="Assign_50">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[sFormText]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[sFormText &amp; "&lt;div id='form"+ nIndex.ToString + "' class='"+ sClass + "'&gt;" + Environment.NewLine +
-"&lt;h2&gt;" + FormPayload("formtitle").ToString + "&lt;/h2&gt;" + Environment.NewLine +
+sTitle + 
 "&lt;div id='form" + nIndex.ToString + "'&gt;&lt;/div&gt;" + Environment.NewLine + 
 "&lt;script type=""text/javascript""&gt;" + Environment.NewLine + 
 "$(""#form" + nIndex.ToString + """).alpaca(" + Environment.NewLine +
@@ -457,6 +485,7 @@ JSONPayload.ToString + Environment.NewLine +
 FooterHTML + Environment.NewLine +
 "&lt;/div&gt;" + Environment.NewLine +
 "&lt;/div&gt;" + Environment.NewLine +
+"&lt;/div&gt;" + Environment.NewLine +
 "&lt;/body&gt;" + Environment.NewLine +
 "&lt;/html&gt;"]</InArgument>
       </Assign.Value>
@@ -470,139 +499,142 @@ FooterHTML + Environment.NewLine +
       </Assign.Value>
     </Assign>
     <ui:WriteTextFile DisplayName="Write text file" FileName="[OutFilePath]" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[sFormText]" />
-    <sads:DebugSymbol.Symbol>d1NDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyTGliXFJlbmRlckZvcm0ueGFtbJIBAbEbAccgARABvggBsgkBDwG3EwHnFgEOAYEOAZcTAQ0BhQwB3g0BDAHSCQHhCwELAaQyAaAzAQoBXAGhCAEJAbQvAYkyAQgB9i0Bii8BBwHpIAHPIgEGAfQiAb4mAQUB3SYB7CkBBAGJFwGJGwEDAYwqAdQtAQJZA9oDDgIBAWMFcg4DAc0BcwW8AhICAU69AgXEAg4CAUnFAgXSAg4CAUXTAgX8AhICAS/9AgWHAw4CASuIAwXBAxICARHCAwXPAw4CAQ3QAwXXAw4CAQfYAwXYA5UBAgECZTFlPAMBzgFzkAFzoAEDAcsBczlzQwMByQF5C7kCFgIBT8ICMMICUQIBTL8CMb8CPAIBSscCMccCPAIBRtMCkAHTAqABAgFD0wI50wJDAgFB2QIL+QIWAgEw/wIx/wI8AgEsiAOQAYgDoAECASmIAzmIA0MCASeOAwu+AxYCARLEAzHEAzwCAQ7VAzDVA2UCAQrSAzHSAzwCAQjYA4UB2AOSAQIBBdgDPtgDTQIBA3s9e0QCAVZ8PXxEAgFVfT19RAIBVH49fkQCAVN/PX9EAgFSgAE9gAFEAgFRgQE9gQFEAgFQgwENigEWAwHFAYsBDaABEgMBtQGhAQ22ARIDAaYBtwENzAESAwGXAc0BDeABEgMBkwHhAQ32ARIDAYQB9wENjAISAgF1jQINogISAgFmowINuAISAgFX2wI82wJTAgEx3QIN5AIWAgE95QIN8AISAgE28QIN+AIWAgEykAM8kANVAgETkgMNmQMWAgEjmgMNoQMWAgEfogMNrQMSAgEYrgMNvQMWAgEUiAFSiAGEAQMByAGFAVOFAWADAcYBiwEbiwFiAwG2AY0BEZ4BHAMBuQGhARuhAWoDAacBowERtAEcAwGqAbcBG7cBcAMBmAG5ARHKARwDAZsBzQEbzQFOAwGUAc8BEd4BIQMBlgHhARvhAWQDAYUB4wER9AEcAwGIAfcBG/cBZgIBdvkBEYoCHAIBeY0CG40CagIBZ48CEaACHAIBaqMCG6MCegIBWKUCEbYCHAIBW+ICUuIChAECAUDfAlPfAmACAT7lAhvlAiwCATfnAhHuAhoCATnzAjnzAkQCATOXA1KXA4QBAgEmlANTlANgAgEknwM7nwNpAgEinAM8nANJAgEgogMbogMsAgEZpAMRqwMaAgEbsAM5sANEAgEVjgETlQEcAwHBAZYBE50BHAMBugGkAROrARwDAbEBrAETswEcAwGrAboBE8EBHAMBogHCARPJARwDAZwB5AET6wEcAwGPAewBE/MBHAMBiQH6AROBAhwDAYABggITiQIcAgF6kAITlwIcAgFxmAITnwIcAgFrpgITrQIcAgFirgITtQIcAgFc7AI87AJOAgE86QI96QJFAgE6qQM8qQNNAgEepgM9pgNFAgEckwE/kwFDAwHEAZABQJABUwMBwgGbAT6bAXcDAb0BmAE/mAFKAwG7AakBP6kBQwMBtAGmAUCmAVcDAbIBsQE+sQFfAwGuAa4BP64BSgMBrAG/AT+/AUMDAaUBvAFAvAFaAwGjAccBPscBYgMBnwHEAT/EAUoDAZ0B6QE/6QFDAwGSAeYBQOYBVAMBkAHxAT7xAVwDAYwB7gE/7gFKAwGKAf8BP/8BQwMBgwH8AUD8AVUDAYEBhwI+hwJdAgF9hAI/hAJKAgF7lQI/lQJDAgF0kgJAkgJXAgFynQI+nQJfAgFumgI/mgJKAgFsqwI/qwJDAgFlqAJAqAJfAgFjswI+swJnAgFfsAI/sAJKAgFd</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="Assign_42" sap:VirtualizedContainerService.HintSize="578.857142857143,64" />
-      <sap2010:ViewStateData Id="Assign_28" sap:VirtualizedContainerService.HintSize="541.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_35" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_26" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="262.857142857143,283.428571428571">
+      <sap2010:ViewStateData Id="Assign_42" sap:VirtualizedContainerService.HintSize="579,64" />
+      <sap2010:ViewStateData Id="Assign_28" sap:VirtualizedContainerService.HintSize="541,60" />
+      <sap2010:ViewStateData Id="Assign_35" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_26" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="264,284">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_10" sap:VirtualizedContainerService.HintSize="541.142857142857,433.714285714286" />
-      <sap2010:ViewStateData Id="Assign_36" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_27" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="262.857142857143,283.428571428571">
+      <sap2010:ViewStateData Id="If_10" sap:VirtualizedContainerService.HintSize="541,434" />
+      <sap2010:ViewStateData Id="Assign_36" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_27" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="264,284">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_11" sap:VirtualizedContainerService.HintSize="541.142857142857,433.714285714286" />
-      <sap2010:ViewStateData Id="Assign_37" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_29" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="262.857142857143,283.428571428571">
+      <sap2010:ViewStateData Id="If_11" sap:VirtualizedContainerService.HintSize="541,434" />
+      <sap2010:ViewStateData Id="Assign_37" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_29" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="264,284">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_12" sap:VirtualizedContainerService.HintSize="541.142857142857,433.714285714286" />
-      <sap2010:ViewStateData Id="Assign_30" sap:VirtualizedContainerService.HintSize="241.142857142857,64" />
-      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="262.857142857143,187.428571428571">
+      <sap2010:ViewStateData Id="If_12" sap:VirtualizedContainerService.HintSize="541,434" />
+      <sap2010:ViewStateData Id="Assign_30" sap:VirtualizedContainerService.HintSize="242,64" />
+      <sap2010:ViewStateData Id="Sequence_9" sap:VirtualizedContainerService.HintSize="264,188">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="CommentOut_2" sap:VirtualizedContainerService.HintSize="416,265.142857142857" />
-      <sap2010:ViewStateData Id="If_13" sap:VirtualizedContainerService.HintSize="541.142857142857,415.428571428571" />
-      <sap2010:ViewStateData Id="Assign_38" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_31" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="262.857142857143,283.428571428571">
+      <sap2010:ViewStateData Id="CommentOut_2" sap:VirtualizedContainerService.HintSize="416,266" />
+      <sap2010:ViewStateData Id="If_13" sap:VirtualizedContainerService.HintSize="541,416" />
+      <sap2010:ViewStateData Id="Assign_38" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_31" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="264,284">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_14" sap:VirtualizedContainerService.HintSize="541.142857142857,433.714285714286" />
-      <sap2010:ViewStateData Id="Assign_39" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_32" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="262.857142857143,283.428571428571">
+      <sap2010:ViewStateData Id="If_14" sap:VirtualizedContainerService.HintSize="541,434" />
+      <sap2010:ViewStateData Id="Assign_39" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_32" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="264,284">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_15" sap:VirtualizedContainerService.HintSize="541.142857142857,433.714285714286" />
-      <sap2010:ViewStateData Id="Assign_40" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_33" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="262.857142857143,283.428571428571">
+      <sap2010:ViewStateData Id="If_15" sap:VirtualizedContainerService.HintSize="541,434" />
+      <sap2010:ViewStateData Id="Assign_40" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_33" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="264,284">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_16" sap:VirtualizedContainerService.HintSize="541.142857142857,433.714285714286" />
-      <sap2010:ViewStateData Id="Assign_41" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Assign_34" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="262.857142857143,283.428571428571">
+      <sap2010:ViewStateData Id="If_16" sap:VirtualizedContainerService.HintSize="541,434" />
+      <sap2010:ViewStateData Id="Assign_41" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_34" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="264,284">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_17" sap:VirtualizedContainerService.HintSize="541.142857142857,433.714285714286" />
-      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="562.857142857143,3954.85714285714">
+      <sap2010:ViewStateData Id="If_17" sap:VirtualizedContainerService.HintSize="541,434" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="563,3958">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="578.857142857143,4090.28571428571" />
-      <sap2010:ViewStateData Id="Assign_43" sap:VirtualizedContainerService.HintSize="578.857142857143,60" />
-      <sap2010:ViewStateData Id="Assign_44" sap:VirtualizedContainerService.HintSize="578.857142857143,64" />
+      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="579,4093" />
+      <sap2010:ViewStateData Id="Assign_43" sap:VirtualizedContainerService.HintSize="579,60" />
+      <sap2010:ViewStateData Id="Assign_44" sap:VirtualizedContainerService.HintSize="579,64" />
       <sap2010:ViewStateData Id="Assign_52" sap:VirtualizedContainerService.HintSize="464,60" />
-      <sap2010:ViewStateData Id="Assign_45" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="If_18" sap:VirtualizedContainerService.HintSize="464,210.285714285714" />
+      <sap2010:ViewStateData Id="Assign_45" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="If_18" sap:VirtualizedContainerService.HintSize="464,210" />
       <sap2010:ViewStateData Id="Assign_46" sap:VirtualizedContainerService.HintSize="464,60" />
-      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="485.714285714286,533.714285714286">
+      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="486,534">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ForEach`1_2" sap:VirtualizedContainerService.HintSize="578.857142857143,669.142857142857" />
-      <sap2010:ViewStateData Id="Assign_47" sap:VirtualizedContainerService.HintSize="578.857142857143,64" />
-      <sap2010:ViewStateData Id="Assign_53" sap:VirtualizedContainerService.HintSize="464,60" />
-      <sap2010:ViewStateData Id="Assign_54" sap:VirtualizedContainerService.HintSize="464,60" />
-      <sap2010:ViewStateData Id="Assign_49" sap:VirtualizedContainerService.HintSize="241.142857142857,60" />
-      <sap2010:ViewStateData Id="If_19" sap:VirtualizedContainerService.HintSize="464,210.285714285714" />
-      <sap2010:ViewStateData Id="Assign_50" sap:VirtualizedContainerService.HintSize="464,64" />
-      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="485.714285714286,637.714285714286">
+      <sap2010:ViewStateData Id="ForEach`1_2" sap:VirtualizedContainerService.HintSize="579,669" />
+      <sap2010:ViewStateData Id="Assign_47" sap:VirtualizedContainerService.HintSize="579,64" />
+      <sap2010:ViewStateData Id="Assign_53" sap:VirtualizedContainerService.HintSize="509,60" />
+      <sap2010:ViewStateData Id="Assign_54" sap:VirtualizedContainerService.HintSize="509,60" />
+      <sap2010:ViewStateData Id="Assign_49" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="If_19" sap:VirtualizedContainerService.HintSize="509,210" />
+      <sap2010:ViewStateData Id="Assign_55" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_56" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="If_20" sap:VirtualizedContainerService.HintSize="509,210" />
+      <sap2010:ViewStateData Id="Assign_50" sap:VirtualizedContainerService.HintSize="509,64" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="531,888">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ForEach`1_3" sap:VirtualizedContainerService.HintSize="578.857142857143,773.142857142857" />
-      <sap2010:ViewStateData Id="Assign_51" sap:VirtualizedContainerService.HintSize="578.857142857143,64" />
-      <sap2010:ViewStateData Id="Assign_48" sap:VirtualizedContainerService.HintSize="578.857142857143,60" />
-      <sap2010:ViewStateData Id="WriteTextFile_1" sap:VirtualizedContainerService.HintSize="578.857142857143,86.2857142857143" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="600.571428571429,6478.28571428571">
+      <sap2010:ViewStateData Id="ForEach`1_3" sap:VirtualizedContainerService.HintSize="579,1023" />
+      <sap2010:ViewStateData Id="Assign_51" sap:VirtualizedContainerService.HintSize="579,64" />
+      <sap2010:ViewStateData Id="Assign_48" sap:VirtualizedContainerService.HintSize="579,60" />
+      <sap2010:ViewStateData Id="WriteTextFile_1" sap:VirtualizedContainerService.HintSize="579,87" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="601,6732">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="RenderForm_1" sap:VirtualizedContainerService.HintSize="640.571428571429,6558.28571428571" />
+      <sap2010:ViewStateData Id="RenderForm_1" sap:VirtualizedContainerService.HintSize="641,6812" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
