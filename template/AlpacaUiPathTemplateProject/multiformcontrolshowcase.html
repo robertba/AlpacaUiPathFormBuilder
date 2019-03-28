@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
 <html>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -25,14 +26,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
 <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css"/>
 </head><body>
+<div class='wrapper container-fluid'>
 <div class='row'>
 <div class='col-md-1'></div>
 <div class='col-md-10'>
 <div class='row'>
-<div class='col-md-3'><img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/></div>
-<div class='col-md-9'><ul class='nav nav-pills'>
+<div class='col-md-2'><img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/></div>
+<div class='col-md-10'><ul class='nav nav-pills'>
   <li class='active btn-lg'><a data-toggle='pill' href='#form0'>Text Field Examples</a></li>
-  <li class='btn-lg'><a data-toggle='pill' href='#form1'>Selectors Examples</a></li>
+  <li class='btn-lg'><a data-toggle='pill' href='#form1'>Selector Examples</a></li>
   <li class='btn-lg'><a data-toggle='pill' href='#form2'>Rich Text Editor Examples</a></li>
   <li class='btn-lg'><a data-toggle='pill' href='#form3'>Color Picker Examples</a></li>
 </ul></div>
@@ -144,6 +146,7 @@ $("#form0").alpaca(
     }
   },
   "options": {
+    "hideInitValidationError": true,
     "fields": {
       "cTextField": {},
       "cCurrency": {
@@ -157,7 +160,7 @@ $("#form0").alpaca(
       "cTextFieldWithValidation": {},
       "cDate": {
         "dateFormat": "MM/DD/YY",
-        "manualEntry": true,
+        "manualEntry": false,
         "picker": {
           "format": "MM/DD/YY"
         },
@@ -166,7 +169,7 @@ $("#form0").alpaca(
       "cTextFieldWithDefault": {},
       "cDateTime": {
         "dateFormat": "MM/DD/YYYY hh:mm:ss a",
-        "manualEntry": false,
+        "manualEntry": true,
         "picker": {
           "format": "MM/DD/YYYY hh:mm:ss a"
         },
@@ -189,6 +192,7 @@ $("#form0").alpaca(
         "type": "url"
       },
       "cTextFieldZip": {
+        "format": "five",
         "type": "zipcode"
       },
       "cTextFieldPhone": {
@@ -246,13 +250,13 @@ $("#form0").alpaca(
 </script>
 </div>
 <div id='form1' class='tab-pane fade'>
-<h2>Selectors Examples</h2>
+<h2>Selector Examples</h2>
 <div id='form1'></div>
 <script type="text/javascript">
 $("#form1").alpaca(
 {
   "schema": {
-    "title": "Selectors Examples",
+    "title": "Selector Examples",
     "type": "object",
     "properties": {
       "cSelect": {
@@ -314,6 +318,7 @@ $("#form1").alpaca(
     }
   },
   "options": {
+    "hideInitValidationError": true,
     "fields": {
       "cSelect": {
         "optionLabels": [
@@ -423,6 +428,7 @@ $("#form2").alpaca(
     }
   },
   "options": {
+    "hideInitValidationError": true,
     "fields": {
       "cCKEdit": {
         "rows": 5,
@@ -503,6 +509,7 @@ $("#form3").alpaca(
     }
   },
   "options": {
+    "hideInitValidationError": true,
     "fields": {
       "cColor": {
         "type": "color"
@@ -553,6 +560,7 @@ $("#form3").alpaca(
 </div>
 <div Class='col-md-1'></div>
 <h3>This form is powered by <a href='http://www.uipath.com' target='_blank'>Uipath</a></h3>
+</div>
 </div>
 </div>
 </body>

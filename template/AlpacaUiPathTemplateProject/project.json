@@ -5,8 +5,8 @@
   "dependencies": {
     "UiPath.System.Activities": "[19.3.6996.29711]",
     "UiPath.UIAutomation.Activities": "[19.3.0]",
-    "AlpacaUiPathFormBuilderLib": "[1.0.0.80]",
-    "UiPath.WebAPI.Activities": "[1.4.0]"
+    "UiPath.WebAPI.Activities": "[1.4.0]",
+    "AlpacaUiPathFormBuilderLib": "[1.0.0.81]"
   },
   "schemaVersion": "3.2",
   "studioVersion": "18.4.1.0",
