@@ -3,9 +3,10 @@
   "description": "AlpacaUiPath Demonstrations in Form Building and Form Generation",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.UIAutomation.Activities": "[18.4.2]",
-    "UiPath.System.Activities": "[18.4.1]",
-    "AlpacaUiPathFormBuilderLib": "1.0.0.69"
+    "UiPath.System.Activities": "[19.3.6996.29711]",
+    "UiPath.UIAutomation.Activities": "[19.3.0]",
+    "AlpacaUiPathFormBuilderLib": "[1.0.0.80]",
+    "UiPath.WebAPI.Activities": "[1.4.0]"
   },
   "schemaVersion": "3.2",
   "studioVersion": "18.4.1.0",
