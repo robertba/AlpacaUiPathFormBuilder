@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="TextField" this:TextField.LayoutBinding="column-1" this:TextField.IsReadOnly="False" this:TextField.IsRequired="False" this:TextField.IsHidden="False"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="TextField" this:TextField.LayoutBinding="column-1" this:TextField.MinLength="0" this:TextField.MaxLength="40" this:TextField.IsReadOnly="False" this:TextField.IsRequired="False" this:TextField.IsHidden="False"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -19,12 +19,12 @@
     <x:Property Name="FormPayload" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="LayoutBinding" Type="InArgument(x:String)" />
     <x:Property Name="MinLength" Type="InArgument(x:Int32)" />
+    <x:Property Name="MaxLength" Type="InArgument(x:Int32)" />
     <x:Property Name="IsReadOnly" Type="InArgument(x:Boolean)" />
     <x:Property Name="IsRequired" Type="InArgument(x:Boolean)" />
     <x:Property Name="IsHidden" Type="InArgument(x:Boolean)" />
     <x:Property Name="Description" Type="InArgument(x:String)" />
     <x:Property Name="Pattern" Type="InArgument(x:String)" />
-    <x:Property Name="MaxLength" Type="InArgument(x:Int32)" />
     <x:Property Name="Helper" Type="InArgument(x:String)" />
     <x:Property Name="fieldClass" Type="InArgument(x:String)" />
     <x:Property Name="helpers" Type="InArgument(s:String[])" />
@@ -32,6 +32,11 @@
     <x:Property Name="id" Type="InArgument(x:String)" />
     <x:Property Name="Format" Type="InArgument(x:String)" />
   </x:Members>
+  <this:TextField.Pattern>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:TextField.Pattern>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
@@ -88,7 +93,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TextField" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TextArea" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="jobjProperties" />
       <Variable x:TypeArguments="njl:JObject" Name="jobjControlSchema" />
@@ -111,7 +116,7 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControl">[jpropControl]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke common TextField workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="TextField.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke common text Field workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="TextField.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue">[DefaultValue]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="MinLength">[MinLength]</InArgument>
@@ -148,22 +153,22 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sads:DebugSymbol.Symbol>d3ZDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY0ZsYXRcQWxwYWNhVWlQYXRoRm9ybUJ1aWxkZXJMaWJcY3RybFRleHRGaWVsZC54YW1sLwFcAWUBBQGBAQGHAQEEAcMBAckBAQMBowEBqQEBAlsDmAEOAgEBZQVxHQIBOnIFeh0CAS57BY4BHQIBDI8BBZYBHQIBAmpRamUCAUxsSWxVAgFKaE1oXQIBSG5JblUCAUZnXmdrAgFEaVBpYwIBQmtUa2kCAUBvTW9bAgE+Zb8BZdcBAgE9bUBtRgIBO3RFdFMCATh1QXVMAgE2d0F3TAIBNHhQeGMCATJ2QHZJAgEwcr4Bcs4BAgEvggFOggFiAgEsjAE/jAFHAgEqiQFCiQFLAgEoigFIigFZAgEmhQFGhQFVAgEkfUR9UQIBIoABQIABSQIBIIEBTYEBYAIBHoMBP4MBRwIBHIQBRoQBUgIBGogBQ4gBTwIBGH5EflACARaHAUKHAUwCARSLATuLAT8CARJ7ugF71AECARF/RH9QAgEPhgE9hgFDAgENkQFNkQFdAgEKkwFJkwFVAgEIlAFUlAFpAgEGkgFNkgFbAgEEjwG5AY8BywECAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3JDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxjdHJsVGV4dEZpZWxkLnhhbWwyAYABAYIBAQgBnQEBoAEBBwFcAWUBBiUHJTYBBQG8AQHCAQEEAf4BAYQCAQMB3gEB5AEBAmADnQEOAgEBagV2HQIBOncFfx0CAS6AAQWTAR0CAQyUAQWbAR0CAQJvUW9lAgFMcUlxVQIBSm1NbV0CAUhzSXNVAgFGbF5sawIBRG5QbmMCAUJwVHBpAgFAdE10WwIBPmq/AWrXAQIBPXJAckYCATt5RXlTAgE4ekF6TAIBNnxBfEwCATR9UH1jAgEye0B7SQIBMHe/AXfPAQIBL4cBTocBYgIBLJEBP5EBRwIBKo4BQo4BSwIBKI8BSI8BWQIBJooBRooBVQIBJIIBRIIBUQIBIoUBQIUBSQIBIIYBTYYBYAIBHogBP4gBRwIBHIkBRokBUgIBGo0BQ40BTwIBGIMBRIMBUAIBFowBQowBTAIBFJABO5ABPwIBEoABugGAAdQBAgERhAFEhAFQAgEPiwE9iwFDAgENlgFNlgFdAgEKmAFJmAFVAgEImQFUmQFpAgEGlwFNlwFbAgEElAG5AZQBywECAQM=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_29" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_26" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_30" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,592">
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_29" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_26" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_30" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,588.571428571429">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="376,672" />
+      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="375.428571428571,668.571428571429" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

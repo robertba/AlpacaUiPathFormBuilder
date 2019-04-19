@@ -1,0 +1,311 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Test" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Test_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Test" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="sForm" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="FormPayload" />
+      <Variable x:TypeArguments="x:String" Name="sResult" />
+    </Sequence.Variables>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke StartForm workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="StartForm.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="FormTitle">Our Form Title</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="SubmitButtonText">Submit</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutTemplate" />
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlTextFieldPhone workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="ctrlTextFieldPhone.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:String" x:Key="Caption" />
+        <InArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired">True</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:String" x:Key="Helper" />
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:String" x:Key="Format" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlTextFieldZipCode workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="ctrlTextFieldZipCode.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:String" x:Key="Caption" />
+        <InArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:String" x:Key="Helper" />
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:String" x:Key="Format">five</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlTextFieldURL workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="ctrlTextFieldURL.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:String" x:Key="Caption" />
+        <InArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:String" x:Key="Helper" />
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:String" x:Key="Format" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlPassword workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="ctrlPassword.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Object" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:String" x:Key="Caption" />
+        <InArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:String" x:Key="Helper" />
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:String" x:Key="Format" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlCurrency workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="ctrlCurrency.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="Caption" />
+        <InArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:String" x:Key="Helper" />
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="centsLimit" />
+        <InArgument x:TypeArguments="x:String" x:Key="centsSeparator" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="insertPlusSign" />
+        <InArgument x:TypeArguments="x:String" x:Key="Prefix" />
+        <InArgument x:TypeArguments="x:String" x:Key="Round" />
+        <InArgument x:TypeArguments="x:String" x:Key="Suffix" />
+        <InArgument x:TypeArguments="x:String" x:Key="thousandsSeparator" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="Unmask" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlNumber workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="ctrlNumber.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:String" x:Key="Caption">Number</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:String" x:Key="Helper" />
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:Double" x:Key="Minimum" />
+        <InArgument x:TypeArguments="x:Double" x:Key="Maximum" />
+        <InArgument x:TypeArguments="x:String" x:Key="Format" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TextField workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ctrlTextField.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="DefaultValue">wow</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Caption">hey it's a label</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Name">text1</InArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding">column-1</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength">[Nothing]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Helper">helper1</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition">above</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:String" x:Key="Format" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ctrlTextArea workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="ctrlTextArea.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="DefaultValue" />
+        <InArgument x:TypeArguments="x:String" x:Key="Caption" />
+        <InArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="FormPayload">[FormPayload]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LayoutBinding" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MinLength" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="MaxLength" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsReadOnly" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsRequired" />
+        <InArgument x:TypeArguments="x:Boolean" x:Key="IsHidden" />
+        <InArgument x:TypeArguments="x:String" x:Key="Description" />
+        <InArgument x:TypeArguments="x:String" x:Key="Pattern" />
+        <InArgument x:TypeArguments="x:Int32" x:Key="Rows" />
+        <InArgument x:TypeArguments="x:String" x:Key="Helper">Helper3</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="fieldClass" />
+        <InArgument x:TypeArguments="s:String[]" x:Key="helpers" />
+        <InArgument x:TypeArguments="x:String" x:Key="helpersPosition" />
+        <InArgument x:TypeArguments="x:String" x:Key="id" />
+        <InArgument x:TypeArguments="x:String" x:Key="Format" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RenderForm workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="RenderForm.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="SubmitClick" />
+        <InArgument x:TypeArguments="x:String" x:Key="OutFilePath">textfields.html</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="FooterHTML" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeJQuery" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeHandlebars" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeBootstrap" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeAlpaca" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeJQueryUI" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeDateTimePicker" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeCurrency" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeColorPicker" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeColor" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeSelect" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeCKEditor" />
+        <InArgument x:TypeArguments="x:String" x:Key="IncludeSummerNoteEditor" />
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)[]" x:Key="FormPayloads">[{FormPayload}]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:CustomInput DisplayName="Custom Input" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="textfields.html" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[sResult]" TopMost="True" />
+    <sads:DebugSymbol.Symbol>d3NDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxUZXN0VGV4dEZpZWxkcy54YW1sMkADngIOAgEBRgVNHQIBOU4FYx0CATRkBXkdAgEvegWPAR0CASuQAQWlAR0CASemAQXBAR0CASPCAQXZAR0CAR7aAQXvAR0CARPwAQWGAh0CAQ6HAgWaAh0CAQmbAgWbAosBAgEFnAIFnAK3AQIBAkhCSFACAT5JSUlPAgE9S19LbAIBO0a2AUbGAQIBOlNhU24CATdOwAFO2QECATZYRFhIAgE1dz93QwIBM2lhaW4CATFkwgFk3QECATB/YX9uAgEter4BetUBAgEslQFhlQFuAgEpkAG6AZABzQECASiqAWGqAW4CASWmAboBpgHNAQIBJMUBQMUBRgIBIscBYccBbgIBIMIBuAHCAckBAgEf3AFF3AFIAgEd5wFB5wFKAgEc6wFI6wFNAgEb4AFG4AFOAgEa3QFA3QFQAgEZ6AE/6AFGAgEY3wFh3wFuAgEW2gG2AdoBygECARXeAT3eAUICART/AT//AUYCARL1AWH1AW4CARDwAbkB8AHMAQIBD4oCRIoCUwIBDYcCtwGHAsgBAgEMmAJhmAJwAgEKmwJ3mwKIAQIBCJsCZ5sCcgIBBpwCmgGcAqUBAgED</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_1" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_34" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_33" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_32" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_28" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_10" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_3" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_2" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="CustomInput_1" sap:VirtualizedContainerService.HintSize="313.714285714286,90.2857142857143" />
+      <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="313.714285714286,58.2857142857143" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,1574.85714285714">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Test_1" sap:VirtualizedContainerService.HintSize="375.428571428571,1694.85714285714" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

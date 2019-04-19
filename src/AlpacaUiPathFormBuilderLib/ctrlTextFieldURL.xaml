@@ -160,23 +160,23 @@
         <InOutArgument x:TypeArguments="njl:JProperty" x:Key="jpropControlOptions">[jpropControlOptions]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sads:DebugSymbol.Symbol>d3lDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY0ZsYXRcQWxwYWNhVWlQYXRoRm9ybUJ1aWxkZXJMaWJcY3RybFRleHRGaWVsZFVSTC54YW1sNwGAAQGCAQEIAZ0BAaABAQcBXAFlAQYlByU2AQUBvAEBwgEBBAH+AQGEAgEDAd4BAeQBAQJgA6QBDgIBAWoFdh0CAUB3BX8dAgE0gAEFhgEdAgEuhwEFmgEdAgEMmwEFogEdAgECb1FvZQIBUnFJcVUCAVBtTW1dAgFOc0lzVQIBTGxebGsCAUpuUG5jAgFIcFRwaQIBRnRNdFsCAURqvwFq1wECAUNyQHJGAgFBeUV5UwIBPnpBekwCATx8QXxMAgE6fVB9YwIBOHtAe0kCATZ3vwF3zwECATWDAUKDAUkCATOEAUOEAVcCATGCAUGCAUUCATCAAaIBgAG9AQIBL44BTo4BYgIBLJgBP5gBRwIBKpUBQpUBSwIBKJYBSJYBWQIBJpEBRpEBVQIBJIkBRIkBUQIBIowBQIwBSQIBII0BTY0BYAIBHo8BP48BRwIBHJABRpABUgIBGpQBQ5QBTwIBGIoBRIoBUAIBFpMBQpMBTAIBFJcBO5cBPwIBEocBugGHAdQBAgERiwFEiwFQAgEPkgE9kgFDAgENnQFNnQFdAgEKnwFJnwFVAgEIoAFUoAFpAgEGngFNngFbAgEEmwG5AZsBywECAQM=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3VDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxjdHJsVGV4dEZpZWxkVVJMLnhhbWw3AYABAYIBAQgBnQEBoAEBBwFcAWUBBiUHJTYBBQG8AQHCAQEEAf4BAYQCAQMB3gEB5AEBAmADpAEOAgEBagV2HQIBQHcFfx0CATSAAQWGAR0CAS6HAQWaAR0CAQybAQWiAR0CAQJvUW9lAgFScUlxVQIBUG1NbV0CAU5zSXNVAgFMbF5sawIBSm5QbmMCAUhwVHBpAgFGdE10WwIBRGq/AWrXAQIBQ3JAckYCAUF5RXlTAgE+ekF6TAIBPHxBfEwCATp9UH1jAgE4e0B7SQIBNne/AXfPAQIBNYMBQoMBSQIBM4QBQ4QBVwIBMYIBQYIBRQIBMIABogGAAb0BAgEvjgFOjgFiAgEsmAE/mAFHAgEqlQFClQFLAgEolgFIlgFZAgEmkQFGkQFVAgEkiQFEiQFRAgEijAFAjAFJAgEgjQFNjQFgAgEejwE/jwFHAgEckAFGkAFSAgEalAFDlAFPAgEYigFEigFQAgEWkwFCkwFMAgEUlwE7lwE/AgEShwG6AYcB1AECARGLAUSLAVACAQ+SAT2SAUMCAQ2dAU2dAV0CAQqfAUmfAVUCAQigAVSgAWkCAQaeAU2eAVsCAQSbAbkBmwHLAQIBAw==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_29" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_26" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_27" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="314,87" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_29" sap:VirtualizedContainerService.HintSize="314.285714285714,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_26" sap:VirtualizedContainerService.HintSize="314.285714285714,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_27" sap:VirtualizedContainerService.HintSize="314.285714285714,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_31" sap:VirtualizedContainerService.HintSize="314.285714285714,86.2857142857143" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_30" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,719">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,715.428571428571">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="376,799" />
+      <sap2010:ViewStateData Id="TextField_1" sap:VirtualizedContainerService.HintSize="376,795.428571428571" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

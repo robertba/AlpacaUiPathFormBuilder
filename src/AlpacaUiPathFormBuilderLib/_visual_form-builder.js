@@ -1071,6 +1071,18 @@ var setup = function()
         {
             alert("Your browser must support HTML5 local storage in order to use this feature");
             return;
+			
+		var json = {
+            "schema": schema
+        };
+        if (options) {
+            json.options = options;
+        }
+        if (data) {
+            json.data = data;
+        }
+		var jack = JSON.stringify(json, null, " ");
+		
         } */
 
         var config = {};
@@ -1088,17 +1100,8 @@ var setup = function()
         }
         var configString = JSON.stringify(config);
 
-		var json = {
-            "schema": schema
-        };
-        if (options) {
-            json.options = options;
-        }
-        if (data) {
-            json.data = data;
-        }
-		
-		window.external.setResult(JSON.stringify(json, null, "    "));
+
+		window.external.setResult(configString);
        // localStorage.setItem("alpacaDesignerConfig", configString);
 
         //alert("Your form was saved in HTML5 local storage");

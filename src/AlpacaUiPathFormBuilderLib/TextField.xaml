@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="commonTextBox" this:commonTextBox.MaxLength="40"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="commonTextBox" this:commonTextBox.MinLength="0" this:commonTextBox.MaxLength="40"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
@@ -116,24 +116,24 @@
         <InOutArgument x:TypeArguments="njl:JObject" x:Key="JObj">[jobjControlSchema]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <sads:DebugSymbol.Symbol>d3JDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY0ZsYXRcQWxwYWNhVWlQYXRoRm9ybUJ1aWxkZXJMaWJcVGV4dEZpZWxkLnhhbWweAWABYwECSwN4DgIBAUwFUh0CASRTBVkdAgEdWgVgHQIBFmEFaA4CARBpBW8dAgEJcAV2HQIBAk9CT0wCASlQQ1BWAgEnTkFORQIBJkyhAUy8AQIBJVZCVlACASJXQ1dWAgEgVUFVSAIBH1OkAVO/AQIBHl1CXU0CARteQ15WAgEZXEFcSgIBGFqmAVrBAQIBF2YvZlECARNjMGM7AgERbEJsTQIBDm1DbVYCAQxrQWtKAgELaaYBacEBAgEKc0JzSwIBB3RDdFYCAQVyQXJIAgEEcKQBcL8BAgED</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d25DOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHNyY1xBbHBhY2FVaVBhdGhGb3JtQnVpbGRlckxpYlxUZXh0RmllbGQueGFtbB8BYAFiAQMBgQEBhAEBAksDeA4CAQFMBVIdAgEkUwVZHQIBHVoFYB0CARZhBWgOAgEQaQVvHQIBCXAFdh0CAQJPQk9MAgEpUENQVgIBJ05BTkUCASZMoQFMvAECASVWQlZQAgEiV0NXVgIBIFVBVUgCAR9TpAFTvwECAR5dQl1NAgEbXkNeVgIBGVxBXEoCARhapgFawQECARdmL2ZRAgETYzBjOwIBEWxCbE0CAQ5tQ21WAgEMa0FrSgIBC2mmAWnBAQIBCnNCc0sCAQd0Q3RWAgEFckFySAIBBHCkAXC/AQIBAw==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_1" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_2" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,60" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_6" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_7" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,819">
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_1" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_2" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="313.714285714286,61.1428571428571" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_6" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_7" sap:VirtualizedContainerService.HintSize="313.714285714286,86.2857142857143" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="335.428571428571,816">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="commonTextBox_1" sap:VirtualizedContainerService.HintSize="376,899" />
+      <sap2010:ViewStateData Id="commonTextBox_1" sap:VirtualizedContainerService.HintSize="375.428571428571,896" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
