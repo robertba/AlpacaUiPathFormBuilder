@@ -8,7 +8,7 @@
   },
   "schemaVersion": "3.2",
   "studioVersion": "18.4.5.0",
-  "projectVersion": "1.0.0.82",
+  "projectVersion": "1.0.0.83",
   "runtimeOptions": {
     "autoDispose": false,
     "excludedLoggedData": [
@@ -29,7 +29,6 @@
       "TestDatePickers.xaml",
       "StoreCtrlTypeLoaded.xaml",
       "SetCommonProperties.xaml",
-      "Object.xaml",
       "NewActivity.xaml",
       "InitViewObjects.xaml",
       "InitSchemaObjects.xaml",

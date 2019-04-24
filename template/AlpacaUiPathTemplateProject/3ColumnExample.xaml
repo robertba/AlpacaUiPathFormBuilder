@@ -59,6 +59,8 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -75,34 +77,15 @@
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="sLayoutBinding" />
         </Sequence.Variables>
-        <Switch x:TypeArguments="x:Int32" DisplayName="Switch" Expression="[nCtr Mod 3]" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-          <Switch.Default>
-            <Assign sap2010:WorkflowViewState.IdRef="Assign_6">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[sLayoutBinding]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">column-1</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Switch.Default>
-          <Assign x:Key="1" sap2010:WorkflowViewState.IdRef="Assign_7">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[sLayoutBinding]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">column-2</InArgument>
-            </Assign.Value>
-          </Assign>
-          <Assign x:Key="2" sap2010:WorkflowViewState.IdRef="Assign_8">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[sLayoutBinding]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">column-3</InArgument>
-            </Assign.Value>
-          </Assign>
-        </Switch>
+        <Assign>
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[sLayoutBinding]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["column-" + ((nCtr Mod 3) + 1).ToString]</InArgument>
+          </Assign.Value>
+          <sap2010:WorkflowViewState.IdRef>Assign_9</sap2010:WorkflowViewState.IdRef>
+        </Assign>
         <a:ctrlTextField DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxLength="{x:Null}" MinLength="{x:Null}" Pattern="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="[&quot;Text Field &quot; + (nCtr + 1).ToString]" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTextField_3" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="[sLayoutBinding]" Name="[&quot;TextField &quot; + (nCtr + 1).ToString]" />
         <Assign sap2010:WorkflowViewState.IdRef="Assign_5">
           <Assign.To>
@@ -114,53 +97,43 @@
         </Assign>
       </Sequence>
     </DoWhile>
-    <a:RenderForm FooterHTML="&lt;h3&gt;This form is powered by &lt;a href='http://www.uipath.com' target='_blank'&gt;Uipath&lt;/a&gt;&lt;/h3&gt;" FormPayloads="[{FormPayload}]" sap2010:WorkflowViewState.IdRef="RenderForm_3" IncludeAlpaca="[&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeBootstrap="[&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; href=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&quot; integrity=&quot;&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;script src=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&quot; integrity=&quot;&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeCKEditor="[&quot;&lt;script src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js' type='text/javascript'&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeColor="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeColorPicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeCurrency="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-price-format/2.2.0/jquery.priceformat.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeDateTimePicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeHandlebars="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQuery="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&quot; integrity=&quot;&quot;sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQueryUI="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.min.js&quot;&quot; integrity=&quot;&quot;sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSelect="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSummerNoteEditor="[&quot;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.min.js' type='text/javascript'&gt;&lt;/script&gt;&quot;  + Environment.NewLine +&#xA;&quot;&lt;link rel='stylesheet' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css'/&gt;&quot; + Environment.NewLine]" LogoHTML="&lt;img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/&gt;" OutFilePath="[Environment.CurrentDirectory + &quot;\\3column.html&quot;]" SubmitClick="[&quot;function() {&quot; + Environment.NewLine +&#xA;&quot;                      this.refreshValidationState(true);&quot; + Environment.NewLine +&#xA;&quot;                      if (this.isValid(true)) {&quot; + Environment.NewLine +&#xA;&quot;                          var value = this.getValue();&quot; + Environment.NewLine +&#xA;&quot;       if (typeof (window.external) !== 'undefined' &amp;&amp; ('setResult' in window.external)) {&quot; + Environment.NewLine +&#xA;&quot;      window.external.setResult(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;       else {&quot; + Environment.NewLine +&#xA;&quot;        alert(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;                       }&quot; + Environment.NewLine +&#xA;&quot;                  }&quot;]" />
-    <ui:CustomInput DisplayName="Custom Input" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="3column.html" />
+    <a:RenderForm FooterHTML="&lt;h3&gt;This form is powered by &lt;a href='http://www.uipath.com' target='_blank'&gt;Uipath&lt;/a&gt;&lt;/h3&gt;" FormPayloads="[{FormPayload}]" sap2010:WorkflowViewState.IdRef="RenderForm_3" IncludeAlpaca="[&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeBootstrap="[&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; href=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&quot; integrity=&quot;&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;script src=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&quot; integrity=&quot;&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeCKEditor="[&quot;&lt;script src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js' type='text/javascript'&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeColor="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeColorPicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeCurrency="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-price-format/2.2.0/jquery.priceformat.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeDateTimePicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeHandlebars="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQuery="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&quot; integrity=&quot;&quot;sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQueryUI="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.min.js&quot;&quot; integrity=&quot;&quot;sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSelect="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSummerNoteEditor="[&quot;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.min.js' type='text/javascript'&gt;&lt;/script&gt;&quot;  + Environment.NewLine +&#xA;&quot;&lt;link rel='stylesheet' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css'/&gt;&quot; + Environment.NewLine]" LogoHTML="&lt;img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/&gt;" OutFilePath="[Environment.CurrentDirectory + &quot;\\3column.html&quot;]" SubmitClick="[&quot;function() {&quot; + Environment.NewLine +&#xA;&quot;                      this.refreshValidationState(true);&quot; + Environment.NewLine +&#xA;&quot;                      if (this.isValid(true)) {&quot; + Environment.NewLine +&#xA;&quot;                          var value = this.getValue();&quot; + Environment.NewLine +&#xA;&quot;       if (typeof (window.external) !== 'undefined' &amp;&amp; ('setResult' in window.external)) {&quot; + Environment.NewLine +&#xA;&quot;      window.external.setResult(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;       else {&quot; + Environment.NewLine +&#xA;&quot;        alert(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;                       }&quot; + Environment.NewLine +&#xA;&quot;                  }&quot;]" displayTitleHTML="True" />
+    <ui:CustomInput DisplayName="Custom Input" Height="450" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="3column.html" Width="800" />
     <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jObjOutput]" JsonString="[sResult]" />
     <If Condition="[not jObjOutput Is Nothing AndAlso jObjOutput.Count &gt; 0]" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[sResult]" TopMost="True" />
       </If.Then>
     </If>
-    <sads:DebugSymbol.Symbol>d1VDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1Qcm9qZWN0MVwzQ29sdW1uRXhhbXBsZS54YW1sPEEDfg4CAQFIBUieAwIBR0kFdA8CASN1BXXyMQIBEHYFdogBAgEMdwV3vwECAQd4BXwKAgECSI8BSNYCAgFNSDhIUQIBTEjpAkiBAwIBS0iTA0ibAwIBSkgeSC0CAUhJW0lrAgFFSgdzEgIBJHXoFHX1GQIBInUedZMBAgEhdfABdZwFAgEgda4FdcAKAgEfdYgadeIbAgEedfEbdYEeAgEdddUoddIpAgEcdakqde8xAgEbdfoldcsoAgEaddEKdeYLAgEZdeoSddEUAgEYdZMPddkSAgEXdd8pdZwqAgEWdfQLdf8OAgEVdZIedY4iAgEUdaEBdbIBAgESdZ0ideElAgERdnd2hQECAQ92Z3ZyAgENd7EBd7wBAgEKd5cBd6UBAgEIeBN4UAIBA3oJersBAgEETglpEgIBNmoJapQEAgEqawlyEgIBJXqeAXqpAQIBBU5LTlkCATdZC2AUAgFBYQtoFAIBPVANVxYCATlqyQNq2wMCATRqhAJqtQICATJqwgJq0QICATBqoANqpwMCAS9qjQNqlAMCAS5qswNqugMCAS1q4QNqkQQCAStwM3A9AgEobTRtOgIBJl42Xj4CAURbN1tHAgFCZjZmPgIBQGM3Y0cCAT5VOFVAAgE8UjlSSQIBOg==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3lDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHRlbXBsYXRlXEFscGFjYVVpUGF0aFRlbXBsYXRlUHJvamVjdFwzQ29sdW1uRXhhbXBsZS54YW1sN0MDbQ4CAQFKBUqeAwIBQEsFYw8CASZkBWSKMgIBEmUFZaEBAgEMZgVmvwECAQdnBWsKAgECSo8BStYCAgFGSjhKUQIBRUrpAkqBAwIBREqTA0qbAwIBQ0oeSi0CAUFLW0trAgE+TAdiEgIBJ2ToFGT1GQIBJWQeZJMBAgEkZPABZJwFAgEjZK4FZMAKAgEiZIgaZOIbAgEhZPEbZIEeAgEgZIEyZIcyAgEfZNUoZNIpAgEeZKkqZO8xAgEdZPolZMsoAgEcZNEKZOYLAgEbZOoSZNEUAgEaZJMPZNkSAgEZZN8pZJwqAgEYZPQLZP8OAgEXZJIeZI4iAgEWZKEBZLIBAgEUZJ0iZOElAgETZYQBZZIBAgERZTdlPAIBEGV0ZX8CAQ5lmQFlngECAQ1msQFmvAECAQpmlwFmpQECAQhnE2dQAgEDaQlpuwECAQRQCVgSAgE5WQlZlAQCAS1aCWESAgEoaZ4BaakBAgEFVTRVXQIBPFI1UkUCATpZyQNZ2wMCATdZhAJZtQICATVZwgJZ0QICATNZoANZpwMCATJZjQNZlAMCATFZswNZugMCATBZ4QNZkQQCAS5fM189AgErXDRcOgIBKQ==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="StartForm_2" sap:VirtualizedContainerService.HintSize="524.571428571429,21.7142857142857" />
-      <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
-      <sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
-      <sap2010:ViewStateData Id="Assign_8" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
-      <sap2010:ViewStateData Id="Switch`1_1" sap:VirtualizedContainerService.HintSize="476.571428571429,169.714285714286">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ctrlTextField_3" sap:VirtualizedContainerService.HintSize="476.571428571429,21.7142857142857" />
-      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="476.571428571429,61.1428571428571" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="498.285714285714,456">
+      <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
+      <sap2010:ViewStateData Id="ctrlTextField_3" sap:VirtualizedContainerService.HintSize="241.142857142857,21.7142857142857" />
+      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="262.857142857143,347.428571428571">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="524.571428571429,624.571428571429" />
+      <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="524.571428571429,516" />
       <sap2010:ViewStateData Id="RenderForm_3" sap:VirtualizedContainerService.HintSize="524.571428571429,21.7142857142857" />
       <sap2010:ViewStateData Id="CustomInput_1" sap:VirtualizedContainerService.HintSize="524.571428571429,90.2857142857143" />
       <sap2010:ViewStateData Id="DeserializeJson`1_1" sap:VirtualizedContainerService.HintSize="524.571428571429,61.1428571428571" />
       <sap2010:ViewStateData Id="MessageBox_2" sap:VirtualizedContainerService.HintSize="313.714285714286,58.2857142857143" />
       <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="524.571428571429,214.857142857143" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="546.285714285714,1357.71428571429">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="546.285714285714,1249.14285714286">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TextFields_1" sap:VirtualizedContainerService.HintSize="586.285714285714,1437.71428571429" />
+      <sap2010:ViewStateData Id="TextFields_1" sap:VirtualizedContainerService.HintSize="586.285714285714,1329.14285714286" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

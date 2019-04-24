@@ -59,6 +59,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -69,29 +70,21 @@
       <Variable x:TypeArguments="x:Int32" Name="nCtr" />
       <Variable x:TypeArguments="njl:JObject" Name="jObjOutput" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="tablePayload" />
-      <Variable x:TypeArguments="njl:JObject" Name="jObjDefaults" />
-      <Variable x:TypeArguments="scg:List(njl:JObject)" Name="defaultList" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="jobjDict" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="jobjDict2" />
     </Sequence.Variables>
     <a:StartForm FormPayload="[FormPayload]" FormTitle="Array Example" sap2010:WorkflowViewState.IdRef="StartForm_2" LayoutTemplate="&lt;div class='row'&gt;&lt;div class='col-md-12' id='column-1'&gt;&lt;/div&gt;&lt;/div&gt;" SubmitButtonStyle="btn btn-primary btn-lg" SubmitButtonText="Submit" />
-    <a:ctrlObject DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" Pattern="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Testing Multiple Items" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlObject_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" Name="TestItem" />
+    <a:ctrlObject DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" Pattern="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="Multiple Item Examples" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlObject_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" Name="TestItem" />
     <a:ctrlArrayStart sap2010:WorkflowViewState.IdRef="ctrlArrayStart_1" controlPayload="[tablePayload]" />
-    <Assign sap2010:WorkflowViewState.IdRef="Assign_12">
-      <Assign.To>
-        <OutArgument x:TypeArguments="scg:List(njl:JObject)">[defaultList]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="scg:List(njl:JObject)">[new List(of JObject)]</InArgument>
-      </Assign.Value>
-    </Assign>
     <Assign DisplayName="Schema Object" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
-        <OutArgument x:TypeArguments="njl:JObject">[jobjDefaults]</OutArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[jobjDict]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="njl:JObject">[New JObject]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[New Dictionary(of String, Object)]</InArgument>
       </Assign.Value>
     </Assign>
-    <DoWhile DisplayName="Do While" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[nCtr &lt; 5]">
+    <DoWhile DisplayName="Do While" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="[nCtr &lt; 3]">
       <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="sLayoutBinding" />
@@ -105,7 +98,13 @@
           </Assign.Value>
         </Assign>
         <a:ctrlTextField DefaultValue="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxLength="{x:Null}" MinLength="{x:Null}" Pattern="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="[&quot;Item  &quot; + (nCtr +1).ToString]" FormPayload="[tablePayload]" sap2010:WorkflowViewState.IdRef="ctrlTextField_3" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="[sLayoutBinding]" Name="[&quot;Item &quot; + (nCtr + 1).ToString]" />
-        <a:AddPropertyToJObject sap2010:WorkflowViewState.IdRef="AddPropertyToJObject_2" JObj="[jobjDefaults]" PropName="[&quot;Item &quot; + (nCtr + 1).ToString]" PropValue="[&quot;default value A &quot; + (nCtr + 1).ToString]" />
+        <InvokeMethod DisplayName="Invoke Method" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Add">
+          <InvokeMethod.TargetObject>
+            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[jobjDict]</InArgument>
+          </InvokeMethod.TargetObject>
+          <InArgument x:TypeArguments="x:String">["Item " + (nCtr + 1).ToString]</InArgument>
+          <InArgument x:TypeArguments="x:Object">["default value A" + (nCtr + 1).ToString]</InArgument>
+        </InvokeMethod>
         <Assign sap2010:WorkflowViewState.IdRef="Assign_5">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">[nCtr]</OutArgument>
@@ -116,30 +115,34 @@
         </Assign>
       </Sequence>
     </DoWhile>
-    <AddToCollection x:TypeArguments="njl:JObject" Collection="[defaultList]" DisplayName="Add To Collection" sap2010:WorkflowViewState.IdRef="AddToCollection`1_5" Item="[jobjDefaults]" />
-    <Assign DisplayName="Schema Object" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <Assign DisplayName="Schema Object" sap2010:WorkflowViewState.IdRef="Assign_15">
       <Assign.To>
-        <OutArgument x:TypeArguments="njl:JObject">[jobjDefaults]</OutArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[jobjDict2]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="njl:JObject">[New JObject]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[New Dictionary(of String, Object)]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[nCtr]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
-      <sap2010:WorkflowViewState.IdRef>Assign_13</sap2010:WorkflowViewState.IdRef>
     </Assign>
-    <DoWhile DisplayName="Do While" sap2010:WorkflowViewState.IdRef="DoWhile_2" Condition="[nCtr &lt; 5]">
+    <DoWhile DisplayName="Do While" sap2010:WorkflowViewState.IdRef="DoWhile_2" Condition="[nCtr &lt; 3]">
       <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="sLayoutBinding" />
         </Sequence.Variables>
-        <a:AddPropertyToJObject sap2010:WorkflowViewState.IdRef="AddPropertyToJObject_4" JObj="[jobjDefaults]" PropName="[&quot;Item &quot; + (nCtr + 1).ToString]" PropValue="[&quot;default value B &quot; + (nCtr + 1).ToString]" />
+        <InvokeMethod DisplayName="Invoke Method" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="Add">
+          <InvokeMethod.TargetObject>
+            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[jobjDict2]</InArgument>
+          </InvokeMethod.TargetObject>
+          <InArgument x:TypeArguments="x:String">["Item " + (nCtr + 1).ToString]</InArgument>
+          <InArgument x:TypeArguments="x:Object">["default value B" + (nCtr + 1).ToString]</InArgument>
+        </InvokeMethod>
         <Assign sap2010:WorkflowViewState.IdRef="Assign_11">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">[nCtr]</OutArgument>
@@ -150,14 +153,20 @@
         </Assign>
       </Sequence>
     </DoWhile>
-    <AddToCollection x:TypeArguments="njl:JObject" Collection="[defaultList]" DisplayName="Add To Collection" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[jobjDefaults]" />
-    <a:ctrlTableFinish ActionBarStyle="{x:Null}" Animate="{x:Null}" Collapsed="{x:Null}" Collapsible="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxItems="{x:Null}" MinItems="{x:Null}" Rows="{x:Null}" UniqueItems="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="test" DefaultValue="[defaultList.ToArray]" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTableFinish_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" Name="table Finish" controlPayload="[tablePayload]">
+    <a:ctrlTableFinish ActionBarStyle="{x:Null}" Animate="{x:Null}" Collapsed="{x:Null}" Collapsible="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxItems="{x:Null}" MinItems="{x:Null}" Rows="{x:Null}" UniqueItems="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="test" DefaultValue="[{jobjDict, jobjDict2}]" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlTableFinish_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" Name="table Finish" controlPayload="[tablePayload]">
       <a:ctrlTableFinish.Pattern>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
         </InArgument>
       </a:ctrlTableFinish.Pattern>
     </a:ctrlTableFinish>
+    <a:ctrlArrayFinish ActionBarStyle="{x:Null}" Animate="{x:Null}" Collapsed="{x:Null}" Collapsible="{x:Null}" Description="{x:Null}" Format="{x:Null}" Helper="{x:Null}" MaxItems="{x:Null}" MinItems="{x:Null}" Rows="{x:Null}" UniqueItems="{x:Null}" fieldClass="{x:Null}" helpers="{x:Null}" helpersPosition="{x:Null}" id="{x:Null}" Caption="test array" DefaultValue="[{jobjDict, jobjDict2}]" FormPayload="[FormPayload]" sap2010:WorkflowViewState.IdRef="ctrlArrayFinish_1" IsHidden="False" IsReadOnly="False" IsRequired="False" LayoutBinding="column-1" Name="Array Finish" controlPayload="[tablePayload]">
+      <a:ctrlArrayFinish.Pattern>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </a:ctrlArrayFinish.Pattern>
+    </a:ctrlArrayFinish>
     <a:RenderForm FooterHTML="&lt;h3&gt;This form is powered by &lt;a href='http://www.uipath.com' target='_blank'&gt;Uipath&lt;/a&gt;&lt;/h3&gt;" FormPayloads="[{FormPayload}]" sap2010:WorkflowViewState.IdRef="RenderForm_3" IncludeAlpaca="[&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;http://code.cloudcms.com/alpaca/1.5.24/bootstrap/alpaca.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeBootstrap="[&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; href=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot;&quot; integrity=&quot;&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;script src=&quot;&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js&quot;&quot; integrity=&quot;&quot;sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeCKEditor="[&quot;&lt;script src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js' type='text/javascript'&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeColor="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeColorPicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/css/bootstrap-colorpicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeCurrency="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-price-format/2.2.0/jquery.priceformat.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeDateTimePicker="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment-with-locales.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeHandlebars="[&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot; src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQuery="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&quot; integrity=&quot;&quot;sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine]" IncludeJQueryUI="[&quot;&lt;script src=&quot;&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.min.js&quot;&quot; integrity=&quot;&quot;sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=&quot;&quot; crossorigin=&quot;&quot;anonymous&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine + &#xA;&quot;&lt;link type=&quot;&quot;text/css&quot;&quot; href=&quot;&quot;https://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css&quot;&quot; rel=&quot;&quot;stylesheet&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSelect="[&quot;&lt;script src=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/js/bootstrap-multiselect.min.js&quot;&quot;&gt;&lt;/script&gt;&quot; + Environment.NewLine +&#xA;&quot;&lt;link rel=&quot;&quot;stylesheet&quot;&quot; media=&quot;&quot;screen&quot;&quot; href=&quot;&quot;https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css&quot;&quot;/&gt;&quot; + Environment.NewLine]" IncludeSummerNoteEditor="[&quot;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.min.js' type='text/javascript'&gt;&lt;/script&gt;&quot;  + Environment.NewLine +&#xA;&quot;&lt;link rel='stylesheet' media='screen' href='https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css'/&gt;&quot; + Environment.NewLine]" LogoHTML="&lt;img alt='UiPath Logo' width='150' src='https://www.uipath.com/hubfs/Valentin/Brand-Kit/logos/UiPath-full-logo.svg'/&gt;" OutFilePath="[Environment.CurrentDirectory + &quot;\\array_example.html&quot;]" SubmitClick="[&quot;function() {&quot; + Environment.NewLine +&#xA;&quot;                      this.refreshValidationState(true);&quot; + Environment.NewLine +&#xA;&quot;                      if (this.isValid(true)) {&quot; + Environment.NewLine +&#xA;&quot;                          var value = this.getValue();&quot; + Environment.NewLine +&#xA;&quot;       if (typeof (window.external) !== 'undefined' &amp;&amp; ('setResult' in window.external)) {&quot; + Environment.NewLine +&#xA;&quot;      window.external.setResult(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;       else {&quot; + Environment.NewLine +&#xA;&quot;        alert(JSON.stringify(value, null, &quot;&quot;  &quot;&quot;));&quot; + Environment.NewLine +&#xA;&quot;       }&quot; + Environment.NewLine +&#xA;&quot;                       }&quot; + Environment.NewLine +&#xA;&quot;                  }&quot;]" displayTitleHTML="True" />
     <ui:CustomInput DisplayName="Custom Input" Height="450" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[sResult]" URI="array_example.html" Width="800" />
     <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[jObjOutput]" JsonString="[sResult]" />
@@ -166,55 +175,53 @@
         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[sResult]" TopMost="True" />
       </If.Then>
     </If>
-    <sads:DebugSymbol.Symbol>d3dDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHRlbXBsYXRlXEFscGFjYVVpUGF0aFRlbXBsYXRlUHJvamVjdFxBcnJheUV4YW1wbGUueGFtbGxBA6oBDgIBAUsFS6kCAwGGAUwFTJkDAgF9TQVNbAIBek4FVQ4CAXdWBV0OAgFzXgV2DwIBU3cFd70BAgFPeAV/DgIBS4ABBYgBDgIBR4kBBZgBDwIBN5kBBZkBvQECATOaAQWgARkCASahAQWhAZAyAgESogEFogGnAQIBDKMBBaMBvwECAQekAQWoAQoCAQJLhQFL4QEDAYwBSzhLRwMBiwFL9AFLjAIDAYoBS54CS6YCAwGJAUseSy0DAYcBTPwCTIYDAwGFAUzTAUzrAQMBhAFM+AFMhwIDAYIBTNMCTNoCAwGBAUzAAkzHAgMBgAFM5gJM7QICAX9MjANMlgMCAX5NWU1pAgF7Uz1TUwIBeVA+UEsCAXhbM1tAAgF2WDRYQgIBdF5bXmoCAXFfB3USAgFUdz93TgIBUneqAXe6AQIBUH0zfUACAU56NHpCAgFMhQEvhQEwAgFKggEwggE2AgFIiQFbiQFqAgFFigEHlwESAgE4mQE/mQFOAgE2mQGqAZkBugECATSaAekCmgGAAwIBMpoBxASaAdQEAgEwmgGWBJoBoAQCAS+aAdUCmgHbAgIBLpoBjQOaAZwDAgEsnQELnQE6AgErmgHtA5oB9AMCASqaAdoDmgHhAwIBKZoBgASaAYcEAgEomgGmBJoBtAQCASehAegUoQH1GQIBJaEBHqEBkwECASShAfABoQGcBQIBI6EBrgWhAcAKAgEioQGIGqEB4hsCASGhAfEboQGBHgIBIKEBhzKhAY0yAgEfoQHVKKEB0ikCAR6hAa8qoQH1MQIBHaEB+iWhAcsoAgEcoQHRCqEB5gsCARuhAeoSoQHRFAIBGqEBkw+hAdkSAgEZoQHfKaEBoioCARihAfQLoQH/DgIBF6EBkh6hAY4iAgEWoQGhAaEBsgECARShAZ0ioQHhJQIBE6IBhAGiAZgBAgERogE3ogE8AgEQogF0ogF/AgEOogGfAaIBpAECAQ2jAbEBowG8AQIBCqMBlwGjAaUBAgEIpAETpAFRAgEDpgEJpgG7AQIBBGMJahICAW1rCWuKBAIBYWwJbOgBAgFabQl0EgIBVY4BCY4B6AECAT6PAQmWARICATmmAZ4BpgGpAQIBBWg0aDwCAXBlNWVFAgFua8QDa9YDAgFra4QCa68CAgFpa7wCa8wCAgFna5sDa6IDAgFma4gDa48DAgFla64Da7UDAgFka9wDa4cEAgFibK8BbOUBAgFfbF9sbwIBXWx5bKQBAgFbcjNyPQIBWG80bzoCAVaOAa8BjgHlAQIBQ44BX44BbwIBQY4BeY4BpAECAT+UATOUAT0CATyRATSRAToCATo=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3dDOlxVc2Vyc1xSb2JlcnQgQmFwdGlzdFxEb2N1bWVudHNcVWlQYXRoXEFscGFjYVVpUGF0aEZvcm1CdWlsZGVyXHRlbXBsYXRlXEFscGFjYVVpUGF0aFRlbXBsYXRlUHJvamVjdFxBcnJheUV4YW1wbGUueGFtbG5CA7MBDgIBAUwFTKkCAwGMAU0FTZkDAwGDAU4FTmwDAYABTwVWDgIBfFcFdQ8CAVx2BX0OAgFYfgWFAQ4CAVSGAQWbAQ8CAUScAQWiARkCATWjAQWpARkCASaqAQWqAZAyAgESqwEFqwGnAQIBDKwBBawBvwECAQetAQWxAQoCAQJMhQFM4QEDAZIBTDhMRwMBkQFM9AFMjAIDAZABTJ4CTKYCAwGPAUweTC0DAY0BTfwCTYYDAwGLAU3TAU3rAQMBigFN+AFNhwIDAYgBTdMCTdoCAwGHAU3AAk3HAgMBhgFN5gJN7QIDAYUBTYwDTZYDAwGEAU5ZTmkDAYEBVEpUbQIBf1FLUVUCAX1XW1dqAgF6WAd0EgIBXXtKe20CAVt4S3hWAgFZgwEvgwEwAgFXgAEwgAE2AgFVhgFbhgFqAgFShwEHmgESAgFFnAHpApwBggMCAUGcAcYEnAHWBAIBP5wBmAScAaIEAgE+nAHVApwB2wICAT2cAY8DnAGeAwIBO58BC58BOgIBOpwB7wOcAfYDAgE5nAHcA5wB4wMCATicAYIEnAGJBAIBN5wBqAScAbYEAgE2owHvAqMBiAMCATKjAcwEowHcBAIBMKMBngSjAagEAgEvowHVAqMB4QICAS6jAZUDowGkAwIBLKYBC6YBOgIBK6MB9QOjAfwDAgEqowHiA6MB6QMCASmjAYgEowGPBAIBKKMBrgSjAbwEAgEnqgHoFKoB9RkCASWqAR6qAZMBAgEkqgHwAaoBnAUCASOqAa4FqgHACgIBIqoBiBqqAeIbAgEhqgHxG6oBgR4CASCqAYcyqgGNMgIBH6oB1SiqAdIpAgEeqgGvKqoB9TECAR2qAfolqgHLKAIBHKoB0QqqAeYLAgEbqgHqEqoB0RQCARqqAZMPqgHZEgIBGaoB3ymqAaIqAgEYqgH0C6oB/w4CAReqAZIeqgGOIgIBFqoBoQGqAbIBAgEUqgGdIqoB4SUCAROrAYQBqwGYAQIBEasBN6sBPAIBEKsBdKsBfwIBDqsBnwGrAaQBAgENrAGxAawBvAECAQqsAZcBrAGlAQIBCK0BE60BUQIBA68BCa8BuwECAQRcCWMSAgF2ZAlkigQCAWplCWsYAgFjbAlzEgIBXosBCZEBGAIBS5IBCZkBEgIBRq8BngGvAakBAgEFYTRhPAIBeV41XkUCAXdkxANk1gMCAXRkhAJkrwICAXJkvAJkzAICAXBkmwNkogMCAW9kiANkjwMCAW5krgNktQMCAW1k3ANkhwQCAWtqMmpbAgFoaTJpUQIBZmdOZ1gCAWRxM3E9AgFhbjRuOgIBX5ABMpABWwIBUI8BMo8BUQIBTo0BTo0BWQIBTJcBM5cBPQIBSZQBNJQBOgIBRw==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
       <sap2010:ViewStateData Id="StartForm_2" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
       <sap2010:ViewStateData Id="ctrlObject_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
       <sap2010:ViewStateData Id="ctrlArrayStart_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
-      <sap2010:ViewStateData Id="Assign_12" sap:VirtualizedContainerService.HintSize="464,61.1428571428571" />
       <sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="464,61.1428571428571" />
       <sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
       <sap2010:ViewStateData Id="ctrlTextField_3" sap:VirtualizedContainerService.HintSize="241.142857142857,21.7142857142857" />
-      <sap2010:ViewStateData Id="AddPropertyToJObject_2" sap:VirtualizedContainerService.HintSize="241.142857142857,21.7142857142857" />
+      <sap2010:ViewStateData Id="InvokeMethod_1" sap:VirtualizedContainerService.HintSize="241.142857142857,138.285714285714" />
       <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="262.857142857143,409.142857142857">
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="262.857142857143,525.714285714286">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="464,577.714285714286" />
-      <sap2010:ViewStateData Id="AddToCollection`1_5" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
-      <sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="464,61.1428571428571" />
-      <sap2010:ViewStateData Id="Assign_13" sap:VirtualizedContainerService.HintSize="464,62.8571428571429" />
-      <sap2010:ViewStateData Id="AddPropertyToJObject_4" sap:VirtualizedContainerService.HintSize="241.142857142857,21.7142857142857" />
+      <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="464,694.285714285714" />
+      <sap2010:ViewStateData Id="Assign_15" sap:VirtualizedContainerService.HintSize="464,61.1428571428571" />
+      <sap2010:ViewStateData Id="Assign_13" sap:VirtualizedContainerService.HintSize="464,61.1428571428571" />
+      <sap2010:ViewStateData Id="InvokeMethod_2" sap:VirtualizedContainerService.HintSize="241.142857142857,138.285714285714" />
       <sap2010:ViewStateData Id="Assign_11" sap:VirtualizedContainerService.HintSize="241.142857142857,61.1428571428571" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="262.857142857143,246.285714285714">
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="262.857142857143,362.857142857143">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="DoWhile_2" sap:VirtualizedContainerService.HintSize="464,414.857142857143" />
-      <sap2010:ViewStateData Id="AddToCollection`1_4" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="DoWhile_2" sap:VirtualizedContainerService.HintSize="464,531.428571428571" />
       <sap2010:ViewStateData Id="ctrlTableFinish_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
+      <sap2010:ViewStateData Id="ctrlArrayFinish_1" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
       <sap2010:ViewStateData Id="RenderForm_3" sap:VirtualizedContainerService.HintSize="464,21.7142857142857" />
       <sap2010:ViewStateData Id="CustomInput_1" sap:VirtualizedContainerService.HintSize="464,90.2857142857143" />
       <sap2010:ViewStateData Id="DeserializeJson`1_2" sap:VirtualizedContainerService.HintSize="464,61.1428571428571" />
       <sap2010:ViewStateData Id="MessageBox_2" sap:VirtualizedContainerService.HintSize="313.714285714286,58.2857142857143" />
       <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,213.714285714286" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="485.714285714286,2479.42857142857">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="485.714285714286,2548">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TextFields_1" sap:VirtualizedContainerService.HintSize="525.714285714286,2599.42857142857" />
+      <sap2010:ViewStateData Id="TextFields_1" sap:VirtualizedContainerService.HintSize="525.714285714286,2668" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
